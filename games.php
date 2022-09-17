@@ -11,7 +11,7 @@
     <meta name="description"
         content="">
     <meta name="robots" content="noindex,nofollow">
-    <title>User Panel</title>
+    <title>Game Panel</title>
     <!-- <link rel="canonical" href="https://www.wrappixel.com/templates/Flexy-admin-lite/" /> -->
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
@@ -105,6 +105,7 @@
                                 <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i>
                                     Logout</a>
                                
+                                
                             </ul>
                         </li>
                         <!-- ============================================================== -->
@@ -130,11 +131,11 @@
                                 href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu">Home</span></a></li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        <li class="sidebar-item selected"> <a class="sidebar-link waves-effect waves-dark sidebar-link active"
                                 href="pages-profile.html" aria-expanded="false"><i
                                     class="mdi mdi-soccer"></i><span class="hide-menu">Games</span></a></li>
 
-                        <li class="sidebar-item selected"> <a class="sidebar-link waves-effect waves-dark sidebar-link active"
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="table-basic.html" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span
                                     class="hide-menu">Users</span></a></li>
 
@@ -190,74 +191,60 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h4 class="card-title">Users</h4>
-                                    <h6 class="card-subtitle">Manage Users in this Section</h6>
+                                    <h4 class="card-title">Games</h4>
+                                    <h6 class="card-subtitle">Manage Games in this Section</h6>
                                 </div>
                                 <div class="col-md-6 text-end">
-                                   
+                                    <button class="btn btn-primary">Add</button>
                                     <button class="btn btn-primary">Back</button>
                                 </div>
-                                
                             </div>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
                                         <tr>
                                             <th scope="col">Id</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">Address</th>
-                                            <th scope="col">Phone</th>
-                                            <th scope="col">Type</th>
+                                            <th scope="col">Game Title</th>
+                                            <th scope="col">Category</th>
+                                            <th scope="col">Date Time</th>
                                             <th scope="col">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <th scope="row">1</th>
-                                            <td>Lisha Panthi</td>
-                                            <td>Lisha@gmail.com</td>
-                                            <td>Pokhara</td>
-                                            <td>9812345678</td>
-                                            <td><span class="badge bg-info">Admin</span></td>
-                                            <td><button class="btn btn-info text-white">Edit</button> <button class="btn btn-secondary">Change Password</button></td>
+                                            <td>nepal vs bhutan 4 - 0 / Women's SAFF Championship </td>
+                                            <td>Football</td>
+                                            <td>2022-10-10, Wednesday,12:00 p.m</td>
+                                            <td><button class="btn btn-info text-white">Edit</button>
                                         </tr>
                                         <tr>
                                             <th scope="row">2</th>
                                             <td>Lisha Panthi</td>
                                             <td>Lisha@gmail.com</td>
                                             <td>Pokhara</td>
-                                            <td>9812345678</td>
-                                            <td><span class="badge bg-info">User</span></td>
-                                            <td><button class="btn btn-info text-white">Edit</button> <button class="btn btn-secondary">Change Password</button></td>
+                                            <td><button class="btn btn-info text-white">Edit</button> 
                                         </tr>
                                         <tr>
                                             <th scope="row">3</th>
                                             <td>Lisha Panthi</td>
                                             <td>Lisha@gmail.com</td>
                                             <td>Pokhara</td>
-                                            <td>9812345678</td>
-                                            <td><span class="badge bg-info">User</span></td>
-                                            <td><button class="btn btn-info text-white">Edit</button> <button class="btn btn-secondary">Change Password</button></td>
+                                            <td><button class="btn btn-info text-white">Edit</button>
                                         </tr>
                                         <tr>
                                             <th scope="row">4</th>
                                             <td>Lisha Panthi</td>
                                             <td>Lisha@gmail.com</td>
                                             <td>Pokhara</td>
-                                            <td>9812345678</td>
-                                            <td><span class="badge bg-success">User</span></td>
-                                            <td><button class="btn btn-info text-white">Edit</button> <button class="btn btn-secondary">Change Password</button></td>
+                                            <td><button class="btn btn-info text-white">Edit</button>
                                         </tr>
                                         <tr>
                                             <th scope="row">5</th>
                                             <td>Praful Tamrakar</td>
                                             <td>Praful@gmail.com</td>
                                             <td>Kathmandu</td>
-                                            <td>9812345678</td>
-                                            <td><span class="badge bg-success">User</span></td>
-                                            <td><button class="btn btn-info text-white">Edit</button> <button class="btn btn-secondary">Change Password</button></td>
-                                        </tr>
+                                            <td><button class="btn btn-info text-white">Edit</button>
                                     </tbody>
                                 </table>
                             </div>
