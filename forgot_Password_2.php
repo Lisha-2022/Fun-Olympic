@@ -11,7 +11,7 @@
     <meta name="description"
         content="Flexy Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Update_Category</title>
+    <title>Forgot_Password_2</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/Flexy-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/logo2.png">
@@ -63,9 +63,9 @@
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                            <!-- <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" /> -->
                             <!-- Light Logo text -->
-                            <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                            <!-- <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" /> -->
                         </span>
                     </a>
                     <!-- ============================================================== -->
@@ -117,12 +117,12 @@
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
-        <aside class="left-sidebar" data-sidebarbg="skin6">
+        <!-- <aside class="left-sidebar" data-sidebarbg="skin6"> -->
             <!-- Sidebar scroll-->
-            <div class="scroll-sidebar">
+            <!-- <div class="scroll-sidebar"> -->
                 <!-- Sidebar navigation-->
-                <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
+                <!-- <nav class="sidebar-nav"> -->
+                    <!-- <ul id="sidebarnav">
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu">Home</span></a></li>
@@ -143,29 +143,28 @@
                                 href="icon-material.html" aria-expanded="false"><i class="mdi mdi-youtube-play"></i><span
                                     class="hide-menu">Top Videos</span></a></li>
 
-                    </ul>
+                    </ul> -->
 
-                </nav>
+                <!-- </nav> -->
                 <!-- End Sidebar navigation -->
-            </div>
+            <!-- </div> -->
             <!-- End Sidebar scroll-->
-        </aside>
+        <!-- </aside> -->
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
-        <div class="page-wrapper">
+        <!-- <div class="page-wrapper"> -->
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
-            <div class="page-breadcrumb">
+            <!-- <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-12 text-center">
-                        
                         <h1 class="mb-0 fw-bold">Fun Olympic Game</h1> 
-                    </div>
+                    </div> -->
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
@@ -175,31 +174,36 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="card">
-                        <div class="card-header">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h4 class="card-title">Update Category</h4><Br>
-                                    <h6 class="card-subtitle">Update Category in this Section</h6>
-                                </div>
-                                <div class="col-md-6 text-end">
+                        <!-- <div class="card-header"> -->
+                            <!-- <div class="row"> -->
+                                <!-- <div class="col-md-6"> -->
+                                    <!-- <h4 class="card-title">Forgot Password</h4><Br> -->
+                                    <!-- <h6 class="card-subtitle">Add Games in this Section</h6> -->
+                                <!-- </div> -->
+                                <!-- <div class="col-md-6 text-end">
                                     <button class="btn btn-primary">Back</button>
-                                </div>
-                            </div>
-                        </div>
+                                </div> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
                         <div class="card-body">
                             <form action="#">
                                 <div class="mb-3 row">
-                                    <label for="" class="col-md-2 col-form-label">Title</label>
+                                    <label for="" class="col-md-2 col-form-label">New Password</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" required />
                                     </div>
                                 </div>
-                                
-                                <div class="col-md-12 text-end">
-                                    <button class="btn btn-primary" type="submit">Update</button>
+
+                                <div class="mb-3 row">
+                                    <label for="" class="col-md-2 col-form-label">Re-Type Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" required />
+                                    </div>
                                 </div>
 
-                                <!-- <button class="btn btn-primary" type="submit">Update</button> -->
+                                <!-- <hr size = "4" > </hr> -->
+                                
+                          <button class="btn btn-primary" type="submit">Save</button>
                             </form>
                         </div>
                     </div>
