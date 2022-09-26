@@ -142,6 +142,17 @@
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="icon-material.html" aria-expanded="false"><i class="mdi mdi-youtube-play"></i><span
                                     class="hide-menu">Top Videos</span></a></li>
+                                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="icon-material.html" aria-expanded="false"><i class="mdi mdi-newspaper"></i><span
+                                 class="hide-menu">News</span></a></li>
+
+                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="icon-material.html" aria-expanded="false"><i class="mdi mdi-seal"></i><span
+                                 class="hide-menu">Medal</span></a></li>
+
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="icon-material.html" aria-expanded="false"><i class="mdi mdi-chart-timeline"></i><span
+                                 class="hide-menu">Schedule</span></a></li>
 
                     </ul>
 
@@ -179,7 +190,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <h4 class="card-title">Add Game</h4><Br>
-                                    <h6 class="card-subtitle">Add Games in this Section</h6>
+                                   
                                 </div>
                                 <div class="col-md-6 text-end">
                                     <button class="btn btn-primary">Back</button>

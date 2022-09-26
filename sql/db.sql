@@ -1,3 +1,9 @@
+CREATE table categories
+(
+    id int not null PRIMARY KEY,
+    title varchar (50)   
+);
+
 CREATE table games 
 (
     id int not null PRIMARY KEY,
@@ -12,13 +18,6 @@ CREATE table games
     likes int,
     dislikes int,
     description text
-);
-
-
-CREATE table categories
-(
-    id int not null PRIMARY KEY,
-    title varchar (50)   
 );
 
 CREATE table users 

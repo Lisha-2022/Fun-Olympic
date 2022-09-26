@@ -196,11 +196,9 @@
                                         <input type="text" class="form-control" required />
                                     </div>
                                 </div>
-
-                                
-                                <!-- <hr size = "4" > </hr> -->
-                                
-                          <button class="btn btn-primary" type="submit">Save</button>
+  
+                          <button class="btn btn-primary" type="submit">Cancel</button>
+                          <button class="btn btn-primary" type="submit">Search</button>
                             </form>
                         </div>
                     </div>
