@@ -11,10 +11,10 @@
     <meta name="description"
         content="Flexy Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Flexy Admin Lite Template by WrapPixel</title>
+    <title>Edit_Users</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/Flexy-admin-lite/" />
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo2.png">
     <!-- Custom CSS -->
     <link href="assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <link href="assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css" rel="stylesheet">
@@ -57,17 +57,15 @@
                         <b class="logo-icon">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
-                            <!-- Light Logo icon -->
-                            <img src="assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                            <img src="images/logo2.png" height="80" width="150" alt="homepage" class="dark-logo" />
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                            <!-- <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" /> -->
                             <!-- Light Logo text -->
-                            <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                            <!-- <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" /> -->
                         </span>
                     </a>
                     <!-- ============================================================== -->
@@ -88,13 +86,7 @@
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark"
-                                href="javascript:void(0)"><i class="mdi mdi-magnify me-1"></i> <span class="font-16">Search</span></a>
-                            <form class="app-search position-absolute">
-                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a
-                                    class="srh-btn"><i class="mdi mdi-window-close"></i></a>
-                            </form>
-                        </li>
+                      
                     </ul>
                     <!-- ============================================================== -->
                     <!-- Right side toggle and nav items -->
@@ -109,11 +101,7 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i>
-                                    My Profile</a>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i>
-                                    My Balance</a>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i>
-                                    Inbox</a>
+                                    Logout</a>
                             </ul>
                         </li>
                         <!-- ============================================================== -->
@@ -135,28 +123,26 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                                    class="hide-menu">Dashboard</span></a></li>
+                                    class="hide-menu">Home</span></a></li>
+
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="pages-profile.html" aria-expanded="false"><i
-                                    class="mdi mdi-account-network"></i><span class="hide-menu">Profile</span></a></li>
+                                    class="mdi mdi-soccer"></i><span class="hide-menu">Games</span></a></li>
+
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="table-basic.html" aria-expanded="false"><i class="mdi mdi-border-all"></i><span
-                                    class="hide-menu">Table</span></a></li>
+                                href="table-basic.html" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span
+                                    class="hide-menu">Users</span></a></li>
+
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-material.html" aria-expanded="false"><i class="mdi mdi-face"></i><span
-                                    class="hide-menu">Icon</span></a></li>
+                                href="icon-material.html" aria-expanded="false"><i class="mdi mdi-format-list-bulleted-type"></i><span
+                                    class="hide-menu">Category</span></a></li>
+
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="starter-kit.html" aria-expanded="false"><i class="mdi mdi-file"></i><span
-                                    class="hide-menu">Blank</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="error-404.html" aria-expanded="false"><i class="mdi mdi-alert-outline"></i><span
-                                    class="hide-menu">404</span></a></li>
-                        <li class="text-center p-40 upgrade-btn">
-                            <a href="https://www.wrappixel.com/templates/flexy-bootstrap-admin-template/"
-                                class="btn d-block w-100 btn-danger text-white" target="_blank">Upgrade to Pro</a>
-                        </li>
+                                href="icon-material.html" aria-expanded="false"><i class="mdi mdi-youtube-play"></i><span
+                                    class="hide-menu">Top Videos</span></a></li>
+
                     </ul>
 
                 </nav>
@@ -176,18 +162,10 @@
             <!-- ============================================================== -->
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
-                    <div class="col-6">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb mb-0 d-flex align-items-center">
-                              <li class="breadcrumb-item"><a href="index.html" class="link"><i class="mdi mdi-home-outline fs-4"></i></a></li>
-                              <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                            </ol>
-                          </nav>
-                        <h1 class="mb-0 fw-bold">Dashboard</h1> 
+                    <div class="col-12 text-center">
+                        
+                        <h1 class="mb-0 fw-bold">Fun Olympic Game</h1> 
                     </div>
-                    
-                </div>
-            </div>
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
@@ -200,8 +178,8 @@
                         <div class="card-header">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h4 class="card-title">Create Game</h4><Br>
-                                    <h6 class="card-subtitle">Create Games in this Section</h6>
+                                    <h4 class="card-title">Add Game</h4><Br>
+                                    <h6 class="card-subtitle">Add Games in this Section</h6>
                                 </div>
                                 <div class="col-md-6 text-end">
                                     <button class="btn btn-primary">Back</button>
@@ -211,47 +189,38 @@
                         <div class="card-body">
                             <form action="#">
                                 <div class="mb-3 row">
-                                    <label for="" class="col-md-2 col-form-label">Title</label>
+                                    <label for="" class="col-md-2 col-form-label">Name</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" required />
                                     </div>
                                 </div>
+
                                 <div class="mb-3 row">
-                                    <label for="staticEmail" class="col-sm-2 col-form-label">Category</label>
+                                    <label for="" class="col-md-2 col-form-label">Email</label>
                                     <div class="col-sm-10">
-                                      <select class="form-select" required>
-                                        <option value="">-- Select Category --</option>
-                                        <option>Cat 1</option>
-                                        <option>Cat 2</option>
-                                        <option>Cat 3</option>
-                                      </select>
+                                        <input type="text" class="form-control" required />
                                     </div>
                                 </div>
+
                                 <div class="mb-3 row">
-                                    <label for="staticEmail" class="col-sm-2 col-form-label">Hosting Time</label>
+                                    <label for="" class="col-md-2 col-form-label">Address</label>
                                     <div class="col-sm-10">
-                                      <input type="date" class="form-control"  required/>
+                                        <input type="text" class="form-control" required />
                                     </div>
                                 </div>
+
                                 <div class="mb-3 row">
-                                    <label for="staticEmail" class="col-sm-2 col-form-label">Video</label>
+                                    <label for="" class="col-md-2 col-form-label">Phone Number</label>
                                     <div class="col-sm-10">
-                                      <input type="file" class="form-control" required/>
+                                        <input type="text" class="form-control" required />
                                     </div>
                                 </div>
-                                <div class="mb-3 row">
-                                    <label for="staticEmail" class="col-sm-2 col-form-label">Thumbnail</label>
-                                    <div class="col-sm-10">
-                                      <input type="file" class="form-control" required/>
-                                    </div>
+                                 
+                                <div class="col-md-12 text-end">
+                                    <button class="btn btn-primary" type="submit">Add</button>
                                 </div>
-                                <div class="mb-3 row">
-                                    <label for="staticEmail" class="col-sm-2 col-form-label">Description</label>
-                                    <div class="col-sm-10">
-                                      <textarea class="form-control"></textarea>
-                                    </div>
-                                </div>
-                                <button class="btn btn-primary" type="submit">Create</button>
+                            
+                                <!-- <button class="btn btn-primary" type="submit">Add</button> -->
                             </form>
                         </div>
                     </div>
@@ -264,9 +233,8 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center">
-                All Rights Reserved by Flexy Admin. Designed and Developed by <a
-                    href="https://www.wrappixel.com">WrapPixel</a>.
-            </footer>
+                All Rights Reserved by Fun Olympic Games
+          </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->

@@ -11,7 +11,7 @@
     <meta name="description"
         content="Flexy Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Update_Category</title>
+    <title>Add_Games</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/Flexy-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/logo2.png">
@@ -58,6 +58,7 @@
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
                             <img src="images/logo2.png" height="80" width="150" alt="homepage" class="dark-logo" />
+                            
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
@@ -178,8 +179,8 @@
                         <div class="card-header">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h4 class="card-title">Update Category</h4><Br>
-                                    <h6 class="card-subtitle">Update Category in this Section</h6>
+                                    <h4 class="card-title">Add Game</h4><Br>
+                                    <h6 class="card-subtitle">Add Games in this Section</h6>
                                 </div>
                                 <div class="col-md-6 text-end">
                                     <button class="btn btn-primary">Back</button>
@@ -194,12 +195,46 @@
                                         <input type="text" class="form-control" required />
                                     </div>
                                 </div>
-                                
-                                <div class="col-md-12 text-end">
-                                    <button class="btn btn-primary" type="submit">Update</button>
+                                <div class="mb-3 row">
+                                    <label for="staticEmail" class="col-sm-2 col-form-label">Category</label>
+                                    <div class="col-sm-10">
+                                      <select class="form-select" required>
+                                        <option value="">-- Select Category --</option>
+                                        <option>Cat 1</option>
+                                        <option>Cat 2</option>
+                                        <option>Cat 3</option>
+                                      </select>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="staticEmail" class="col-sm-2 col-form-label">Hosting Time</label>
+                                    <div class="col-sm-10">
+                                      <input type="date" class="form-control"  required/>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="staticEmail" class="col-sm-2 col-form-label">Video</label>
+                                    <div class="col-sm-10">
+                                      <input type="file" class="form-control" required/>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="staticEmail" class="col-sm-2 col-form-label">Thumbnail</label>
+                                    <div class="col-sm-10">
+                                      <input type="file" class="form-control" required/>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="staticEmail" class="col-sm-2 col-form-label">Description</label>
+                                    <div class="col-sm-10">
+                                      <textarea class="form-control"></textarea>
+                                    </div>
                                 </div>
 
-                                <!-- <button class="btn btn-primary" type="submit">Update</button> -->
+                                <div class="col-md-12 text-end">
+                                    <button class="btn btn-primary" type="submit">Add</button>
+                                </div>
+                                <!-- <button class="btn btn-primary" type="submit">Add</button> -->
                             </form>
                         </div>
                     </div>

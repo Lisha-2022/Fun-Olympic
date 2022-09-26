@@ -11,7 +11,7 @@
     <meta name="description"
         content="Flexy Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Update_Category</title>
+    <title>Add_Category</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/Flexy-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/logo2.png">
@@ -178,8 +178,8 @@
                         <div class="card-header">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h4 class="card-title">Update Category</h4><Br>
-                                    <h6 class="card-subtitle">Update Category in this Section</h6>
+                                    <h4 class="card-title">Add Category</h4><Br>
+                                    <h6 class="card-subtitle">Add Category in this Section</h6>
                                 </div>
                                 <div class="col-md-6 text-end">
                                     <button class="btn btn-primary">Back</button>
@@ -196,10 +196,8 @@
                                 </div>
                                 
                                 <div class="col-md-12 text-end">
-                                    <button class="btn btn-primary" type="submit">Update</button>
+                                    <button class="btn btn-primary" type="submit">Add</button>
                                 </div>
-
-                                <!-- <button class="btn btn-primary" type="submit">Update</button> -->
                             </form>
                         </div>
                     </div>

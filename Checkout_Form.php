@@ -11,7 +11,7 @@
     <meta name="description"
         content="Flexy Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Update_Category</title>
+    <title>Checkout_Form</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/Flexy-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/logo2.png">
@@ -63,9 +63,9 @@
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                            <!-- <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" /> -->
                             <!-- Light Logo text -->
-                            <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                            <!-- <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" /> -->
                         </span>
                     </a>
                     <!-- ============================================================== -->
@@ -117,21 +117,21 @@
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
-        <aside class="left-sidebar" data-sidebarbg="skin6">
+        <!-- <aside class="left-sidebar" data-sidebarbg="skin6"> -->
             <!-- Sidebar scroll-->
-            <div class="scroll-sidebar">
+            <!-- <div class="scroll-sidebar"> -->
                 <!-- Sidebar navigation-->
-                <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                <!-- <nav class="sidebar-nav"> -->
+                    <!-- <ul id="sidebarnav"> -->
+                    <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu">Home</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="pages-profile.html" aria-expanded="false"><i
-                                    class="mdi mdi-soccer"></i><span class="hide-menu">Games</span></a></li>
+                                    class="mdi mdi-soccer"></i><span class="hide-menu">Games</span></a></li> -->
 
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="table-basic.html" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span
                                     class="hide-menu">Users</span></a></li>
 
@@ -141,15 +141,15 @@
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="icon-material.html" aria-expanded="false"><i class="mdi mdi-youtube-play"></i><span
-                                    class="hide-menu">Top Videos</span></a></li>
+                                    class="hide-menu">Top Videos</span></a></li> -->
 
-                    </ul>
+                    <!-- </ul> -->
 
-                </nav>
+                <!-- </nav> -->
                 <!-- End Sidebar navigation -->
-            </div>
+            <!-- </div> -->
             <!-- End Sidebar scroll-->
-        </aside>
+        <!-- </aside> -->
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
@@ -165,6 +165,7 @@
                     <div class="col-12 text-center">
                         
                         <h1 class="mb-0 fw-bold">Fun Olympic Game</h1> 
+                        <p class="mb-0  fw-bold">Checkout Form</p>
                     </div>
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
@@ -178,8 +179,8 @@
                         <div class="card-header">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h4 class="card-title">Update Category</h4><Br>
-                                    <h6 class="card-subtitle">Update Category in this Section</h6>
+                                    <h4 class="card-title">Billing Address</h4><Br>
+                                    <!-- <h6 class="card-subtitle">Add Games in this Section</h6> -->
                                 </div>
                                 <div class="col-md-6 text-end">
                                     <button class="btn btn-primary">Back</button>
@@ -189,17 +190,132 @@
                         <div class="card-body">
                             <form action="#">
                                 <div class="mb-3 row">
-                                    <label for="" class="col-md-2 col-form-label">Title</label>
+                                    <label for="" class="col-md-2 col-form-label">First Name</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" required />
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label for="" class="col-md-2 col-form-label">LastName</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" required />
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label for="" class="col-md-2 col-form-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" required />
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label for="" class="col-md-2 col-form-label">Address</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" required />
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label for="" class="col-md-2 col-form-label">Country</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" required />
+                                    </div>
+                                </div>
+ <div class="mb-3 row">
+    <form action="#">
+      <label for="Cont">Country</label>
+        <select name="Couty" id="Cont">
+        <option value=""></option>
+        <option value="Canada">Canada</option>
+        <option value="USA">USA</option>
+        <option value="UK">UK</option>
+        <option value="India">India</option>
+        <option value="Australia">Australia</option>
+        </select>
+    </form>
+ </div>
+
+                                <div class="mb-3 row">
+                                    <label for="" class="col-md-2 col-form-label">State</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" required />
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label for="" class="col-md-2 col-form-label">Zip</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" required />
                                     </div>
                                 </div>
                                 
-                                <div class="col-md-12 text-end">
-                                    <button class="btn btn-primary" type="submit">Update</button>
+                                <div class="mb-4  form-check">
+                                    <input type="checkbox" class="form-check-input" id="signup-4-Checkbox">
+                                    <label class="form-check-label" for="signup-4-Checkbox">Shipping address is the same as my billing address</label>
                                 </div>
 
-                                <!-- <button class="btn btn-primary" type="submit">Update</button> -->
+                                <div class="mb-4  form-check">
+                                    <input type="checkbox" class="form-check-input" id="signup-4-Checkbox">
+                                    <label class="form-check-label" for="signup-4-Checkbox">Save this information for next time</label>
+                                </div>
+                                
+                             <hr size = "4" > </hr> 
+
+                             <div class="col-md-6">
+                                    <h4 class="card-title">Payment</h4><Br>
+                                </div>
+                                <div class="mb-4  form-check">
+                                    <input type="checkbox" class="form-check-input" id="signup-4-Checkbox">
+                                    <label class="form-check-label" for="signup-4-Checkbox">Credit</label>
+                                </div>
+
+                                <div class="mb-4  form-check">
+                                    <input type="checkbox" class="form-check-input" id="signup-4-Checkbox">
+                                    <label class="form-check-label" for="signup-4-Checkbox">Khalti</label>
+                                </div>
+
+                                <div class="mb-4  form-check">
+                                    <input type="checkbox" class="form-check-input" id="signup-4-Checkbox">
+                                    <label class="form-check-label" for="signup-4-Checkbox">Esewa</label>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label for="" class="col-md-2 col-form-label">Name on  card</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" required />
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label for="" class="col-md-2 col-form-label">Credit Card Number</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" required />
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label for="" class="col-md-2 col-form-label">Expiration</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" required />
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label for="" class="col-md-2 col-form-label">CVV</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" required />
+                                    </div>
+                                </div>
+
+                                <hr size = "4" > </hr>
+
+                                <div class="col-md-7 text-end">
+                                    <button class="btn btn-primary" type="submit">Continue to Checkout</button>
+                                </div>
+                            
+                                <!-- <button class="btn btn-primary" type="submit">Add</button> -->
                             </form>
                         </div>
                     </div>
