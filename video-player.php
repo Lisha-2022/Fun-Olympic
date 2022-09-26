@@ -43,8 +43,7 @@
         <header>
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#"><img src="images/logo2.png" alt="..." width="100" height="50"></a>
-
+                    <a class="navbar-brand" href="#">Fun Olympic</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -62,13 +61,15 @@
                             <li class="nav-item">
                                 <a class="nav-link">Watch</a>
                             </li>
-                           
+                            <li class="nav-item">
+                                <a class="nav-link">Livestreaming</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link">About</a>
                             </li>
                         </ul>
                         <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search"  style="width:500px;" aria-label="Search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
                         <a class="btn btn-outline-primary ms-2" href="login.php">Login</a>
@@ -79,38 +80,79 @@
         </header>
 
         <main>
-            <div class="container-fluid py-5"><br> <br> <br><br>
-                <div class="row d-flex justify-content-center align-items-center py-5">
-                    <div class="col-md-6">
-                        <div class="card">
-                            
-                            <div class="card-body">
-                                <form class="form" action="#">
-                                   
-                                    <div class="mb-3 row">
-                                    <label for="" class="col-md-3 col-form-label">New Password</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" required />
-                                    </div>
-                                    </div>
+            <div class="container-fluid">
+                <div class="row py-5">
+                    <div class="col-md-9">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/L0sLfwQaHHM" title="YouTube video" allowfullscreen></iframe>
+                        </div>
+                        <br>
+                        <h3>Video Title</h3>
+                        <p>Responsive containers allow you to specify a class that is 100% wide until the specified breakpoint is reached, after which we apply max-widths for each of the higher breakpoints. For example, .container-sm is 100% wide to start until the sm breakpoint is reached, where it will scale up with md, lg, xl, and xxl.</p>
+                        
+                        <div class="text-end">
+                        <a href="#"><i class='bx bx-sm bxs-like'></i></a>
+                        <a href="#"><i class='bx bx-sm bxs-dislike'></i></a>
+                        <button class="btn btn-danger text-white">Subscribe</button>
+                        </div>
 
-                                    <div class="mb-3 row">
-                                    <label for="" class="col-md-3 col-form-label">Re-Type Password</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" required />
-                                    </div>
-                                    </div>
-                                
-                                    <div class="text-end">
-                                     <button type="submit" class="btn btn-primary ">Save</button>
-                                    </div>
-                                </form>
+                        <div>
+                            <h3>Comments</h3><hr>
+                        </div>
+                    </div>
+                    <div class="col-md-3 my-3">
+                        <div class="row my-2">
+                            <div class="col-md-5">
+                                <img src="imgs/login.jpg" width="150" height="100"/>
+                            </div>
+                            <div class="col-md-7">
+                                <h6>Wahh</h6>
+                                <small>1 min Ago</small>
+                            </div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-md-5">
+                                <img src="imgs/login.jpg" width="150" height="100"/>
+                            </div>
+                            <div class="col-md-7">
+                                <h6>Wahh</h6>
+                                <small>1 min Ago</small>
+                            </div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-md-5">
+                                <img src="imgs/login.jpg" width="150" height="100"/>
+                            </div>
+                            <div class="col-md-7">
+                                <h6>Wahh</h6>
+                                <small>1 min Ago</small>
+                            </div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-md-5">
+                                <img src="imgs/login.jpg" width="150" height="100"/>
+                            </div>
+                            <div class="col-md-7">
+                                <h6>Wahh</h6>
+                                <small>1 min Ago</small>
                             </div>
                         </div>
                     </div>
                 </div>
-                <footer class="footer text-center fixed-bottom">
-                All Rights Reserved by Fun Olympic Games
+                <!-- FOOTER -->
+                    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                    <div class="col-md-4 d-flex align-items-center">
+                    <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+                    </a>
+                    <span class="text-muted">© 2021 Company, Inc</span>
+                    </div>
+
+                    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                        <li class="ms-3"><a class="text-muted" href="#"><i class='bx bx-sm bxl-instagram'></i></a></li>
+                        <li class="ms-3"><a class="text-muted" href="#"><i class='bx bx-sm bxl-youtube'></i></a></li>
+                        <li class="ms-3"><a class="text-muted" href="#"><i class='bx bx-sm bxl-facebook-circle'></i></a></li>
+                    </ul>
                 </footer>
             </div>
         </main>

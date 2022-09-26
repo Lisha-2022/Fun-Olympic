@@ -204,8 +204,8 @@
                                     
                                 </div>
                                 <div class="col-md-6 text-end">
-                                    <button class="btn btn-primary">Add</button>
-                                    <button class="btn btn-primary">Back</button>
+                                    <a href="add_games.php" class="btn btn-primary">Add</a>
+                                    <a href="index1.php" class="btn btn-primary">Back</a>
                                 </div>
                             </div>
                             <div class="table-responsive">
