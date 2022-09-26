@@ -195,7 +195,7 @@
                                     <h6 class="card-subtitle">Manage Games in this Section</h6>
                                 </div>
                                 <div class="col-md-6 text-end">
-                                    <button class="btn btn-primary">Add</button>
+                                    <a href="add_games.php" class="btn btn-primary">Add</a>
                                     <button class="btn btn-primary">Back</button>
                                 </div>
                             </div>

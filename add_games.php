@@ -183,7 +183,7 @@
                                     <h6 class="card-subtitle">Add Games in this Section</h6>
                                 </div>
                                 <div class="col-md-6 text-end">
-                                    <button class="btn btn-primary">Back</button>
+                                    <a href="games.php" class="btn btn-primary">Back</a>
                                 </div>
                             </div>
                         </div>
