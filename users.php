@@ -97,16 +97,16 @@
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
-                        <li class="nav-item dropdown">
+                        <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="assets/images/users/profile.png" alt="user" class="rounded-circle" width="31">
+                            <img src="images/adminpic.png" alt="user" class="rounded-circle" width="31">
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i>
                                     Logout</a>
                                
                             </ul>
-                        </li>
+                        </li> -->
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
@@ -206,7 +206,7 @@
                                 </div>
                                 <div class="col-md-6 text-end">
                                    
-                                    <button class="btn btn-primary">Back</button>
+                                    <a href="admin_dashboard.php" class="btn btn-primary">Back</a>
                                 </div>
                                 
                             </div>
