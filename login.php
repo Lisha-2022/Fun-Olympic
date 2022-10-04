@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,11 +68,21 @@
                         <div class="mx-auto d-flex justify-center flex-column align-items-center">
                             <h2 class="display-6 pb-3"><strong>Fun Olympic Game</strong></h2>
                             <p class="text-secondary h6 bs_fw-300">SignIn</p>
-                            <form class="py-3 p-lg-3 pt-lg-5 w-100 md-mx-w-550 mx-auto">
-                                <div class="mb-4">
+                            <form class="py-3 p-lg-3 pt-lg-5 w-100 md-mx-w-550 mx-auto" method="POST" action="Backend/login.php">
+                                <?php 
+                            if (isset($_SESSION['message']) && isset($_SESSION['msg_type'])){
+
+                                echo '<div class="alert alert-'.$_SESSION['msg_type'].'" role="alert">
+                                    '.$_SESSION['message'].'
+                                </div>';
+                                }
+                                unset($_SESSION['message']);
+                                unset($_SESSION['msg_type']);
+                            ?>
+                                    <div class="mb-4">
                                         <label for="signup-4-firstname" class="ms-5 form-label text-secondary fw-normal">E-mail</label>
                                     <div class="input-group">
-                                        <i class="p-md-3 fa fa-user"></i><input type="text" class="form-control" id="signup-4-firstname"
+                                        <i class="p-md-3 fa fa-user"></i><input type="text" name="email" class="form-control" id="signup-4-firstname"
                                             aria-describedby="infotext" required>
                                         <!-- <div id="signup-4-infotext" class="form-text py-2 text-danger">Please enter valid
                                             input</div> -->
@@ -78,7 +91,7 @@
                                 <div class="mb-4">
                                     <label for="signup-4-Password" class="ms-5 form-label text-secondary fw-normal">Password</label>
                                     <div class="input-group">
-                                        <i class="p-md-3 fa fa-lock"></i><input type="text" class="form-control" id="signup-4-Password"
+                                        <i class="p-md-3 fa fa-lock"></i><input type="text" name="password" class="form-control" id="signup-4-Password"
                                             aria-describedby="infotext" required>
                                     </div>
                                 </div>

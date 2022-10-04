@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,12 +69,22 @@
                             <h2 class="display-6 pb-3">Create your account</h2>
                             <p class="text-secondary h6 bs_fw-300">Add your account here, it's
                                 free..</p>
-                            <form class="py-3 pt-lg-5 w-100 md-mx-w-550 mx-auto">
+                            <form class="py-3 pt-lg-5 w-100 md-mx-w-550 mx-auto" action="Backend/signup.php" method="POST">
+                            <?php 
+                        if (isset($_SESSION['message']) && isset($_SESSION['msg_type'])){
+
+                            echo '<div class="alert alert-'.$_SESSION['msg_type'].'" role="alert">
+                                '.$_SESSION['message'].'
+                            </div>';
+                            }
+                            unset($_SESSION['message']);
+                            unset($_SESSION['msg_type']);
+                        ?>
                                 <div class="mb-4">
                                     <label for="signup-4-firstname" class="ms-5 form-label text-secondary fw-normal">First
                                         Name</label>
                                     <div class="input-group">
-                                        <i class="p-md-3 fa fa-user"></i><input type="text" class="form-control" id="signup-4-firstname"
+                                        <i class="p-md-3 fa fa-user"></i><input type="text" class="form-control" name="f_name" id="signup-4-firstname"
                                             aria-describedby="infotext" required>
                                         <!-- <div id="signup-4-infotext" class="form-text py-2 text-danger">Please enter valid
                                             input</div> -->
@@ -83,35 +94,35 @@
                                     <label for="signup-4-lastname" class="ms-5 form-label text-secondary fw-normal">Last
                                         Name</label>
                                     <div class="input-group">
-                                        <i class="p-md-3 fa fa-user"></i><input type="text" class="form-control" id="signup-4-lastname"
+                                        <i class="p-md-3 fa fa-user"></i><input type="text" class="form-control" name="l_name" id="signup-4-lastname"
                                             aria-describedby="infotext" required>
                                     </div>
                                 </div>
                                 <div class="mb-4">
                                     <label for="signup-4-Email-Address" class="ms-5 form-label text-secondary fw-normal">Email-Address</label>
                                     <div class="input-group">
-                                        <i class="p-md-3 fa fa-envelope"></i><input type="text" class="form-control" id="signup-4-Email-Address"
+                                        <i class="p-md-3 fa fa-envelope"></i><input type="text" name="email" class="form-control" id="signup-4-Email-Address"
                                             aria-describedby="infotext" required>
                                     </div>
                                 </div>
                                 <div class="mb-4">
                                     <label for="signup-4-Email-Address" class="ms-5 form-label text-secondary fw-normal">Address</label>
                                     <div class="input-group">
-                                        <i class="p-md-3 fa fa-location-dot"></i><input type="text" class="form-control" id="signup-4-Address"
+                                        <i class="p-md-3 fa fa-location-dot"></i><input type="text" name="address" class="form-control" id="signup-4-Address"
                                             aria-describedby="infotext" required>
                                     </div>
                                 </div>
                                 <div class="mb-4">
                                     <label for="signup-4-Phone Number" class="ms-5 form-label text-secondary fw-normal">Phone Number</label>
                                     <div class="input-group">
-                                        <i class="p-md-3 fa fa-phone"></i><input type="text" class="form-control" id="signup-4-Phone Number"
+                                        <i class="p-md-3 fa fa-phone"></i><input type="text" name="phone" class="form-control" id="signup-4-Phone Number"
                                             aria-describedby="infotext" required>
                                     </div>
                                 </div>
                                 <div class="mb-4">
                                     <label for="signup-4-Password" class="ms-5 form-label text-secondary fw-normal">Password</label>
                                     <div class="input-group">
-                                        <i class="p-md-3 fa fa-lock"></i><input type="text" class="form-control" id="signup-4-Password"
+                                        <i class="p-md-3 fa fa-lock"></i><input type="text" name="password" class="form-control" id="signup-4-Password"
                                             aria-describedby="infotext" required>
                                     </div>
                                 </div>
@@ -119,7 +130,7 @@
                                 <div class="mb-4">
                                     <label for="signup-4-Confirm Password" class="ms-5 form-label text-secondary fw-normal">Confirm Password</label>
                                     <div class="input-group">
-                                        <i class="p-md-3 fa fa-lock"></i><input type="text" class="form-control" id="signup-4-Confirm Password"
+                                        <i class="p-md-3 fa fa-lock"></i><input type="text" name="confirm_password" class="form-control" id="signup-4-Confirm Password"
                                             aria-describedby="infotext" required>
                                     </div>
                                 </div>

@@ -1,12 +1,12 @@
 CREATE table categories
 (
-    id int not null PRIMARY KEY,
+    id int not null AUTO_INCREMENT PRIMARY KEY,
     title varchar (50)   
 );
 
 CREATE table games 
 (
-    id int not null PRIMARY KEY,
+    id int not null AUTO_INCREMENT PRIMARY KEY,
     title varchar (50),
     category_id int not null,
     game_time datetime ,
@@ -22,9 +22,10 @@ CREATE table games
 
 CREATE table users 
 (
-    id int not null PRIMARY KEY,
+    id int not null AUTO_INCREMENT PRIMARY KEY,
     name varchar (50),
     email varchar (50),
+    password varchar (255),
     address varchar (50),
     phone bigint (11),
     role varchar (50),
@@ -33,7 +34,7 @@ CREATE table users
 
 Create table comments 
 (
-    id int not null PRIMARY KEY,
+    id int not null AUTO_INCREMENT PRIMARY KEY,
     game_id int not null,
     FOREIGN KEY (game_id)
     REFERENCES games(id)
@@ -47,7 +48,7 @@ Create table comments
 
 CREATE TABLE wishlist
 (
-    id int not null PRIMARY KEY,
+    id int not null AUTO_INCREMENT PRIMARY KEY,
     user_id int not null,
     FOREIGN KEY (user_id)
     REFERENCES users(id)
@@ -60,7 +61,7 @@ CREATE TABLE wishlist
 
 CREATE TABLE gallery
 (
-    id int not null PRIMARY KEY,
+    id int not null AUTO_INCREMENT PRIMARY KEY,
     title varchar (50),
     description text,
     thumbnail varchar (255)
@@ -68,7 +69,7 @@ CREATE TABLE gallery
 
 CREATE table news
 (
-    id int not null PRIMARY KEY,
+    id int not null AUTO_INCREMENT PRIMARY KEY,
     title varchar (50),
      description text,
     thumbnail varchar (255),
@@ -77,7 +78,7 @@ CREATE table news
 
 CREATE table medal_standing
 (
-    id int not null PRIMARY KEY,
+    id int not null AUTO_INCREMENT PRIMARY KEY,
     teams varchar (50),
     gold int,
     silver int,
@@ -87,14 +88,14 @@ CREATE table medal_standing
 
 CREATE table game_schedule
 (
-    id int not null PRIMARY KEY,
+    id int not null AUTO_INCREMENT PRIMARY KEY,
     game_title varchar (50),
     game_time datetime 
 );
 
 CREATE table payment
 (
-    id int not null PRIMARY KEY,
+    id int not null AUTO_INCREMENT PRIMARY KEY,
     product_id int,
     phone_number int,
     amount double,

@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
-$dbname = "myproject";
+$password = "prism4321";
+$dbname = "funolympic";
 
 
 // Create connection
