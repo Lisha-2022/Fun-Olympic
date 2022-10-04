@@ -20,7 +20,7 @@
 </head>
 
 <body>
-     <header>
+     <!-- <header>
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
                 <div class="container-fluid">
                 <a class="navbar-brand" href="#"><img src="images/logo2.png" alt="..." width="100" height="50"></a>
@@ -55,7 +55,7 @@
                     </div>
                 </div>
             </nav>
-        </header>
+        </header> -->
 
 <!-- start of block -->
 
@@ -111,7 +111,7 @@
                                 <div class="mb-4">
                                     <label for="signup-4-Password" class="ms-5 form-label text-secondary fw-normal">Password</label>
                                     <div class="input-group">
-                                        <i class="p-md-3 fa fa-lock"></i><input type="text" class="form-control" id="signup-4-Password"
+                                        <i class="p-md-3 fa fa-lock"></i><input type="password" class="form-control" id="signup-4-Password"
                                             aria-describedby="infotext" required>
                                     </div>
                                 </div>
@@ -119,7 +119,7 @@
                                 <div class="mb-4">
                                     <label for="signup-4-Confirm Password" class="ms-5 form-label text-secondary fw-normal">Confirm Password</label>
                                     <div class="input-group">
-                                        <i class="p-md-3 fa fa-lock"></i><input type="text" class="form-control" id="signup-4-Confirm Password"
+                                        <i class="p-md-3 fa fa-lock"></i><input type="password" class="form-control" id="signup-4-Confirm Password"
                                             aria-describedby="infotext" required>
                                     </div>
                                 </div>

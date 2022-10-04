@@ -18,42 +18,7 @@
 </head>
 
 <body>
-     <header>
-            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-                <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="images/logo2.png" alt="..." width="100" height="50"></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Categories</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link">Sports</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link">Watch</a>
-                            </li>
-                           
-                            <li class="nav-item">
-                                <a class="nav-link">About</a>
-                            </li>
-                        </ul>
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search"  style="width:500px;" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                        <a class="btn btn-outline-primary ms-2" href="login.php">Login</a>
-                        <a class="btn btn-outline-primary ms-2" href="register.php">Register</a>
-                    </div>
-                </div>
-            </nav>
-        </header>
+    
 
 <!-- start of block -->
 
@@ -78,7 +43,7 @@
                                 <div class="mb-4">
                                     <label for="signup-4-Password" class="ms-5 form-label text-secondary fw-normal">Password</label>
                                     <div class="input-group">
-                                        <i class="p-md-3 fa fa-lock"></i><input type="text" class="form-control" id="signup-4-Password"
+                                        <i class="p-md-3 fa fa-lock"></i><input type="password" class="form-control" id="signup-4-Password"
                                             aria-describedby="infotext" required>
                                     </div>
                                 </div>
@@ -101,17 +66,22 @@
                                 
                                 <div>
                                 <button type="submit" class="ms-5 btn btn-primary" style="width: 96.5%">Login</button>
-                                <p class="text-secondary pt-3 small">Dont have an account? <a href="register.php"
+                                <p class="text-secondary pt-3 small text-center">Dont have an account? <a href="register.php"
                                         class="text-decoration-none">Register</a></p>
                                        
                                 </div>
 
-                                <div class="row d-inline text-center px-2 mx-1">
-                                <h6> Or <br> Continue With </h6>
-                                <a class="text-dark" href="#"><i class="fa-brands fa-facebook"></i></a>
-                                <a class="text-dark" href="#"><i class="fa-brands fa-google"></i></a>
-                                <a class="text-dark" href="#"><i class="fa-brands fa-linkedin"></i></a>
-                            </div>
+                                <div class="row d-flex justify-content-center text-center px-2 mx-1">
+                                    <h6> Or <br> Continue With </h6>
+
+                                <div class="row d-inline">
+                                    <a class="text-dark" href="#"><i class="fa-brands fa-facebook"></i></a>
+                                    <a class="text-dark" href="#"><i class="fa-brands fa-google"></i></a>
+                                    <a class="text-dark" href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+
+                                </div>
+                                
                             <div class="row text-center">
                                 <h6>Already have an account?<a href="login.php"> <p class="text-dark">Sign In! </p></a> </h6>
                             </div>
@@ -130,11 +100,10 @@
                                         <div class="h2">
                                             <i class="bi bi-quote text-center text-white"></i>
                                         </div>
-                                        <p class="testimonial">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                            Corrupti atque et dolore. Voluptate, fugit.</p>
+                                        <p class="testimonial"></p>
                                         <p class="overview text-end">
-                                            <b>RDJ</b><br />
-                                            <span class="text-secondary">Managing Director</span>
+                                            <b></b><br />
+                                            <span class="text-secondary"></span>
                                         </p>
                                     </div>
                                 </div>
@@ -144,11 +113,10 @@
                                         <div class="h2">
                                             <i class="bi bi-quote text-center text-white"></i>
                                         </div>
-                                        <p class="testimonial">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                            Corrupti atque et dolore. Voluptate, fugit.</p>
+                                        <p class="testimonial"></p>
                                         <p class="overview text-end">
-                                            <b>Chris Evans</b><br />
-                                            <span class="text-secondary">Team Lead</span>
+                                            <b></b><br />
+                                            <span class="text-secondary"></span>
                                         </p>
                                     </div>
                                 </div>
@@ -158,11 +126,10 @@
                                         <div class="h2">
                                             <i class="bi bi-quote text-center text-white"></i>
                                         </div>
-                                        <p class="testimonial">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                            Corrupti atque et dolore. Voluptate, fugit.</p>
+                                        <p class="testimonial"></p>
                                         <p class="overview text-end">
-                                            <b>JD</b><br />
-                                            <span class="text-secondary">Founder</span>
+                                            <b></b><br />
+                                            <span class="text-secondary"></span>
                                         </p>
                                     </div>
                                 </div>
