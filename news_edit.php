@@ -1,3 +1,19 @@
+<?php include('Backend/admin-session.php'); ?>
+<?php include('Backend/config.php'); ?>
+<?php
+    if (isset($_GET['id']) && !empty($_GET['id'])){
+        $id = $_GET['id'];
+        $sql = "SELECT title, description, thumbnail FROM news where id = $id";
+        $result = $conn->query($sql);
+
+        // Associative array
+        $row = $result->fetch_assoc();
+        $conn->close();
+    }
+    else{
+        header('Location: news.php');
+    }
+?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -198,32 +214,26 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <form action="#">
+                            <form action="Backend/News/update.php" method="POST" enctype="multipart/form-data">
+                            <input type="hidden" name="id" value="<?php echo $id; ?>">
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Title</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                        <input type="text" class="form-control" required value="<?php echo $row['title']; ?>"/>
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Description</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                        <input type="text" class="form-control" required value="<?php echo $row['description']; ?>" />
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
-                                    <label for="" class="col-md-2 col-form-label">Create_at</label>
+                                    <label for="staticEmail" class="col-sm-2 col-form-label">Thumbnail</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
-                                    </div>
-                                </div>
-
-                                <div class="mb-3 row">
-                                    <label for="" class="col-md-2 col-form-label">Thumbnail</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                      <input type="file" class="form-control" required />
                                     </div>
                                 </div>
                                  

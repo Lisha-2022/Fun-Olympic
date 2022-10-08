@@ -1,3 +1,5 @@
+<?php include('Backend/admin-session.php'); ?>
+<?php include('Backend/config.php'); ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -211,6 +213,16 @@
                                 
                             </div>
                             <div class="table-responsive">
+                            <?php 
+                            if (isset($_SESSION['message']) && isset($_SESSION['msg_type'])){
+
+                                echo '<div class="alert alert-'.$_SESSION['msg_type'].'" role="alert">
+                                    '.$_SESSION['message'].'
+                                </div>';
+                                }
+                                unset($_SESSION['message']);
+                                unset($_SESSION['msg_type']);
+                            ?>
                                 <table class="table">
                                     <thead>
                                         <tr>
@@ -224,51 +236,28 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Lisha Panthi</td>
-                                            <td>Lisha@gmail.com</td>
-                                            <td>Pokhara</td>
-                                            <td>9812345678</td>
-                                            <td><span class="badge bg-info">Admin</span></td>
-                                            <td><button class="btn btn-info text-white">Edit</button> <button class="btn btn-secondary">Change Password</button></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Lisha Panthi</td>
-                                            <td>Lisha@gmail.com</td>
-                                            <td>Pokhara</td>
-                                            <td>9812345678</td>
-                                            <td><span class="badge bg-info">User</span></td>
-                                            <td><button class="btn btn-info text-white">Edit</button> <button class="btn btn-secondary">Change Password</button></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Lisha Panthi</td>
-                                            <td>Lisha@gmail.com</td>
-                                            <td>Pokhara</td>
-                                            <td>9812345678</td>
-                                            <td><span class="badge bg-info">User</span></td>
-                                            <td><button class="btn btn-info text-white">Edit</button> <button class="btn btn-secondary">Change Password</button></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">4</th>
-                                            <td>Lisha Panthi</td>
-                                            <td>Lisha@gmail.com</td>
-                                            <td>Pokhara</td>
-                                            <td>9812345678</td>
-                                            <td><span class="badge bg-success">User</span></td>
-                                            <td><button class="btn btn-info text-white">Edit</button> <button class="btn btn-secondary">Change Password</button></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">5</th>
-                                            <td>Praful Tamrakar</td>
-                                            <td>Praful@gmail.com</td>
-                                            <td>Kathmandu</td>
-                                            <td>9812345678</td>
-                                            <td><span class="badge bg-success">User</span></td>
-                                            <td><button class="btn btn-info text-white">Edit</button> <button class="btn btn-secondary">Change Password</button></td>
-                                        </tr>
+                                    <?php
+                                    $sql = "SELECT id, name, email, address, phone, role FROM users where role = 'user'";
+                                    $result = $conn->query($sql); 
+                                    if (!empty($result) && $result->num_rows > 0) {
+                                    // output data of each row
+                                    while($row = $result->fetch_assoc()) {
+                                        echo '<tr>
+                                        <th scope="row">'.$row['id'].'</th>
+                                        <td>'.$row['name'].'</td>
+                                        <td>'.$row['email'].'</td>
+                                        <td>'.$row['address'].'</td>
+                                        <td>'.$row['phone'].'</td>
+                                        <td><span class="badge bg-success">USER</span></td>
+                                        <td><a href="edit_users.php?id='.$row['id'].'" class="btn btn-info text-white">Edit</a> <a href="reset_password.php?id='.$row['id'].'" class="btn btn-secondary">Change Password</a></td>
+                                    </tr>';
+                                    }
+                                    } else {
+                                        echo "<tr><td class='text-center' colspan='7'>No Records </td></tr>";
+                                    }
+                                    $conn->close();
+                                    ?>
+                                        
                                     </tbody>
                                 </table>
                             </div>

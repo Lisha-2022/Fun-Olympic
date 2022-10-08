@@ -1,3 +1,13 @@
+<?php include('Backend/admin-session.php'); ?>
+<?php include('Backend/config.php'); ?>
+<?php
+    if (isset($_GET['id']) && !empty($_GET['id'])){
+        $id = $_GET['id'];
+    }
+    else{
+        header('Location: users.php');
+    }
+?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -198,39 +208,35 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <form action="#">
-                                <div class="mb-3 row">
-                                    <label for="" class="col-md-2 col-form-label">Current Password</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
-                                    </div>
-                                </div>
+                            <form action="Backend/User/change_password.php" method="POST">
+                            <?php 
+                            if (isset($_SESSION['message']) && isset($_SESSION['msg_type'])){
 
+                                echo '<div class="alert alert-'.$_SESSION['msg_type'].'" role="alert">
+                                    '.$_SESSION['message'].'
+                                </div>';
+                                }
+                                unset($_SESSION['message']);
+                                unset($_SESSION['msg_type']);
+                            ?>
+                                <input type="hidden" name="id" value="<?php echo $id; ?>"/>
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">New Password</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                        <input type="password" name="password" class="form-control" required />
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Re-Type New Password</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
-                                    </div>
-                                </div>
-
-                                <div class="mb-3 row">
-                                    <label for="" class="col-md-2 col-form-label">Forgotten Your Password?</label>
-                                    <div class="col-sm-10">
-                                        <!-- <input type="text" class="form-control" required /> -->
+                                        <input type="password" name="confirm_password" class="form-control" required />
                                     </div>
                                 </div>
 
                                 <hr size = "4" > </hr>
                                 
-                                 
-                          <button class="btn btn-primary" type="submit">Save Changes</button>
+                            <button class="btn btn-primary" type="submit">Save Changes</button>
                             </form>
                         </div>
                     </div>

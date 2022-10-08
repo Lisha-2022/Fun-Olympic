@@ -1,3 +1,4 @@
+<?php include('Backend/admin-session.php'); ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -198,37 +199,31 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <form action="#">
+                        <form action="Backend/News/add.php" method="POST" enctype="multipart/form-data">
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Title</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                        <input type="text" name="title" class="form-control" required/>
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Description</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                        <input type="text" name="description" class="form-control" required />
                                     </div>
                                 </div>
 
+
                                 <div class="mb-3 row">
-                                    <label for="" class="col-md-2 col-form-label">Create_at</label>
+                                    <label for="staticEmail" class="col-sm-2 col-form-label">Thumbnail</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                      <input type="file" name="thumbnail" class="form-control" required/>
                                     </div>
                                 </div>
 
-                                <div class="mb-3 row">
-                                    <label for="" class="col-md-2 col-form-label">Thumbnail</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
-                                    </div>
-                                </div>
-                                 
                                 <div class="col-md-12 text-end">
-                                    <a href="news.php"  class="btn btn-primary" type="submit">Add</a>
+                                    <button class="btn btn-primary" type="submit">Add</button>
                                 </div>
                             
                                 <!-- <button class="btn btn-primary" type="submit">Add</button> -->

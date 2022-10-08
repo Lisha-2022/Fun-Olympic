@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,11 +33,21 @@
                         <div class="mx-auto d-flex justify-center flex-column align-items-center">
                             <h2 class="display-6 pb-3"><strong>Fun Olympic Game</strong></h2>
                             <p class="text-secondary h6 bs_fw-300">SignIn</p>
-                            <form class="py-3 p-lg-3 pt-lg-5 w-100 md-mx-w-550 mx-auto">
-                                <div class="mb-4">
+                            <form class="py-3 p-lg-3 pt-lg-5 w-100 md-mx-w-550 mx-auto" method="POST" action="Backend/login.php">
+                                <?php 
+                            if (isset($_SESSION['message']) && isset($_SESSION['msg_type'])){
+
+                                echo '<div class="alert alert-'.$_SESSION['msg_type'].'" role="alert">
+                                    '.$_SESSION['message'].'
+                                </div>';
+                                }
+                                unset($_SESSION['message']);
+                                unset($_SESSION['msg_type']);
+                            ?>
+                                    <div class="mb-4">
                                         <label for="signup-4-firstname" class="ms-5 form-label text-secondary fw-normal">E-mail</label>
                                     <div class="input-group">
-                                        <i class="p-md-3 fa fa-user"></i><input type="text" class="form-control" id="signup-4-firstname"
+                                        <i class="p-md-3 fa fa-user"></i><input type="text" name="email" class="form-control" id="signup-4-firstname"
                                             aria-describedby="infotext" required>
                                         <!-- <div id="signup-4-infotext" class="form-text py-2 text-danger">Please enter valid
                                             input</div> -->
@@ -43,7 +56,7 @@
                                 <div class="mb-4">
                                     <label for="signup-4-Password" class="ms-5 form-label text-secondary fw-normal">Password</label>
                                     <div class="input-group">
-                                        <i class="p-md-3 fa fa-lock"></i><input type="password" class="form-control" id="signup-4-Password"
+                                        <i class="p-md-3 fa fa-lock"></i><input type="text" name="password" class="form-control" id="signup-4-Password"
                                             aria-describedby="infotext" required>
                                     </div>
                                 </div>
@@ -55,7 +68,7 @@
                                         <label class="form-check-label ms-3" for="signup-4-Checkbox">Remember Me</label>
                                     </div>
 
-                                        <div class="col-md-6">
+                                         <div class="col-md-6">
                                             <div class="input-group text-end">
                                                 <input type="checkbox" class="form-check-input" id="signup-4-Checkbox">
                                                 <label class="form-check-label ms-3" for="signup-4-Checkbox">Show Password</label>
@@ -66,22 +79,22 @@
                                 
                                 <div>
                                 <button type="submit" class="ms-5 btn btn-primary" style="width: 96.5%">Login</button>
-                                <p class="text-secondary pt-3 small text-center">Dont have an account? <a href="register.php"
-                                        class="text-decoration-none">Register</a></p>
+                                    <div class="text-center">
+                                 <p class="text-secondary pt-3 small">Dont have an account? <a href="register.php"
+                                        class="text-decoration-none ">Register</a></p>
+                                </div>
                                        
                                 </div>
 
                                 <div class="row d-flex justify-content-center text-center px-2 mx-1">
-                                    <h6> Or <br> Continue With </h6>
+                                <h6> Or <br> Continue With </h6>
 
                                 <div class="row d-inline">
-                                    <a class="text-dark" href="#"><i class="fa-brands fa-facebook"></i></a>
-                                    <a class="text-dark" href="#"><i class="fa-brands fa-google"></i></a>
-                                    <a class="text-dark" href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                <a class="text-dark" href="#"><i class="fa-brands fa-facebook"></i></a>
+                                <a class="text-dark" href="#"><i class="fa-brands fa-google"></i></a>
+                                <a class="text-dark" href="#"><i class="fa-brands fa-linkedin"></i></a>
                                 </div>
-
-                                </div>
-                                
+                            </div>
                             <div class="row text-center">
                                 <h6>Already have an account?<a href="login.php"> <p class="text-dark">Sign In! </p></a> </h6>
                             </div>

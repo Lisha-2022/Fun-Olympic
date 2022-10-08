@@ -5,9 +5,8 @@ include('config.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $firstname= $_POST['first_name'];
-    $lastname = $_POST['last_name'];
-    $phone = $_POST['phone_number'];
+    $name= $_POST['f_name'] . ' ' . $_POST['l_name'];
+    $phone = $_POST['phone'];
     $address = $_POST['address'];
     $confirmpassword = $_POST['confirm_password'];
     $captcha = $_POST['captcha'];
@@ -39,13 +38,13 @@ if (mysqli_num_rows($result) >= 1) {
 }
 
 
-    $sql="INSERT INTO users (f_name,l_name,password,address,phone,email) VALUES
-    ('".$firstname."','".$lastname."','".$password."','".$address."','".$phone."','".$email."')" ;
+    $sql="INSERT INTO users (name,email,password,address,phone,role,has_paid) VALUES
+    ('".$name."','".$email."','".$password."','".$address."','".$phone."','user',0)" ;
    
 if (mysqli_query($conn,$sql)) {
   $_SESSION['message'] = "Account Registered Successfully !!!";
   $_SESSION['msg_type'] = "success";
-  header('Location: ../index.php');
+  header('Location: ../register.php');
 } else {
   echo "Error: ".$sql."<br>".mysqli_error($conn);
 }

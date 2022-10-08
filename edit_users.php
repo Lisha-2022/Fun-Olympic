@@ -1,3 +1,19 @@
+<?php include('Backend/admin-session.php'); ?>
+<?php include('Backend/config.php'); ?>
+<?php
+    if (isset($_GET['id']) && !empty($_GET['id'])){
+        $id = $_GET['id'];
+        $sql = "SELECT name, email, address, phone FROM users where id = $id";
+        $result = $conn->query($sql);
+
+        // Associative array
+        $row = $result->fetch_assoc();
+        $conn->close();
+    }
+    else{
+        header('Location: users.php');
+    }
+?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -198,37 +214,38 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <form action="#">
+                            <form action="Backend/User/update.php" method="POST">
+                            <input type="hidden" name="id" value="<?php echo $id; ?>"/>
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                        <input type="text" name="name" value="<?php echo $row['name']; ?>" class="form-control" required />
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Email</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                        <input type="text" name="email" value="<?php echo $row['email']; ?>" class="form-control" required />
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Address</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                        <input type="text" name="address" value="<?php echo $row['address']; ?>" class="form-control" required />
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Phone Number</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                        <input type="text" name="phone" value="<?php echo $row['phone']; ?>" class="form-control" required />
                                     </div>
                                 </div>
                                  
                                 <div class="col-md-12 text-end">
-                                    <a href="users.php" class="btn btn-primary" type="submit">Add</a>
+                                    <button class="btn btn-primary" type="submit">Update</button>
                                 </div>
                             
                                 <!-- <button class="btn btn-primary" type="submit">Add</button> -->

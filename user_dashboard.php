@@ -1,5 +1,4 @@
-<?php session_start();
-?>
+<?php include('Backend/user-session.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,7 +77,7 @@
                             <img src="images/adminpic.png" alt="user" class="rounded-circle" width="31">
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="guest_dashboard.php"><i class="ti-user m-r-5 m-l-5"></i>Logout</a>
+                                <a class="dropdown-item" href="Backend/logout.php"><i class="ti-user m-r-5 m-l-5"></i>Logout</a>
                             </ul>
                         </li>
                       

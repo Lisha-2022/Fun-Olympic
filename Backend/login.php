@@ -18,12 +18,17 @@ if (mysqli_num_rows($result) > 0) {
     $_SESSION['email'] = $row['email'];
     $_SESSION['address'] = $row['address'];
     $_SESSION['phone'] = $row['phone'];
+    $_SESSION['role'] = $row['role'];
   }
-  header('Location: ../welcome.php');
+  if ($_SESSION['role'] == 'user'){
+    header('Location: ../user_dashboard.php');
+  }else{
+    header('Location: ../admin_dashboard.php');
+  }
 } else {
     $_SESSION['message'] = "Your email or password is mismatched";
     $_SESSION['msg_type'] = "danger";
-    header('Location: ../index.php');
+    header('Location: ../login.php');
 }
 mysqli_close($conn);
 

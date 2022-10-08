@@ -1,3 +1,5 @@
+<?php include('Backend/admin-session.php'); ?>
+<?php include('Backend/config.php'); ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -209,63 +211,49 @@
                                 <div class="col-md-6 text-end">
                                     <a href="news_add.php" class="btn btn-primary">Add</a>
                                     <a href="admin_dashboard.php" class="btn btn-primary">Back</a>
-                                </div>
-                                
-                                
+                                </div>    
                             </div>
                             <div class="table-responsive">
+                            <?php 
+                            if (isset($_SESSION['message']) && isset($_SESSION['msg_type'])){
+
+                                echo '<div class="alert alert-'.$_SESSION['msg_type'].'" role="alert">
+                                    '.$_SESSION['message'].'
+                                </div>';
+                                }
+                                unset($_SESSION['message']);
+                                unset($_SESSION['msg_type']);
+                            ?>
                                 <table class="table">
                                     <thead>
                                         <tr>
                                             <th scope="col">Id</th>
                                             <th scope="col">Title</th>
                                             <th scope="col">Description</th>
-                                            <th scope="col">Created_at</th>
-                                            <th scope="col">Thumbnail</th>
+                                            <th scope="col">Created At</th>
                                             <th scope="col">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Dolphins vs. Bengals final score, results</td>
-                                            <td>Joe Burrow leads Cincinnati win, Miami loses Tua Tagovailoa to another injury</td>
-                                            <td>2022/30/09</td>
-                                            <td>https://www.sportingnews.com/us/nfl/news/dolphins-bengals-live-score-highlights-thursday-night-football/i2gleyqjnmfq9uiiedlepcv2</td>
-                                            <td><a href="news_edit.php" class="btn btn-info text-white">Edit</a>
-                                        </tr>
-                                        <tr>
-                                        <th scope="row">2</th>
-                                            <td>Dolphins vs. Bengals final score, results</td>
-                                            <td>Joe Burrow leads Cincinnati win, Miami loses Tua Tagovailoa to another injury</td>
-                                            <td>2022/30/09</td>
-                                            <td>https://www.sportingnews.com/us/nfl/news/dolphins-bengals-live-score-highlights-thursday-night-football/i2gleyqjnmfq9uiiedlepcv2</td>
-                                            <td><a href="news_edit.php" class="btn btn-info text-white">Edit</a>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Dolphins vs. Bengals final score, results</td>
-                                            <td>Joe Burrow leads Cincinnati win, Miami loses Tua Tagovailoa to another injury</td>
-                                            <td>2022/30/09</td>
-                                            <td>https://www.sportingnews.com/us/nfl/news/dolphins-bengals-live-score-highlights-thursday-night-football/i2gleyqjnmfq9uiiedlepcv2</td>
-                                            <td><a href="news_edit.php" class="btn btn-info text-white">Edit</a>>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">4</th>
-                                            <td>Dolphins vs. Bengals final score, results</td>
-                                            <td>Joe Burrow leads Cincinnati win, Miami loses Tua Tagovailoa to another injury</td>
-                                            <td>2022/30/09</td>
-                                            <td>https://www.sportingnews.com/us/nfl/news/dolphins-bengals-live-score-highlights-thursday-night-football/i2gleyqjnmfq9uiiedlepcv2</td>
-                                            <td><a href="news_edit.php" class="btn btn-info text-white">Edit</a>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">5</th>
-                                            <td>Dolphins vs. Bengals final score, results</td>
-                                            <td>Joe Burrow leads Cincinnati win, Miami loses Tua Tagovailoa to another injury</td>
-                                            <td>2022/30/09</td>
-                                            <td>https://www.sportingnews.com/us/nfl/news/dolphins-bengals-live-score-highlights-thursday-night-football/i2gleyqjnmfq9uiiedlepcv2</td>
-                                            <td><a href="news_edit.php" class="btn btn-info text-white">Edit</a>
-                                        </tr>
+                                    <?php
+                                    $sql = "SELECT id, title, description, created_at FROM news";
+                                    $result = $conn->query($sql); 
+                                    if (!empty($result) && $result->num_rows > 0) {
+                                    // output data of each row
+                                    while($row = $result->fetch_assoc()) {
+                                        echo '<tr>
+                                        <th scope="row">'.$row['id'].'</th>
+                                        <td>'.$row['title'].'</td>
+                                        <td>'.$row['description'].'</td>
+                                        <td>'.$row['created_at'].'</td>
+                                        <td><a href="news_edit.php?id='.$row['id'].'" class="btn btn-info text-white">Edit</a></td>
+                                    </tr>';
+                                    }
+                                    } else {
+                                        echo "<tr><td class='text-center' colspan='7'>No Records </td></tr>";
+                                    }
+                                    $conn->close();
+                                    ?>
                                     </tbody>
                                 </table>
                             </div>

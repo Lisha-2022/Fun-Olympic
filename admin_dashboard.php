@@ -1,3 +1,4 @@
+<?php include('Backend/admin-session.php') ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -139,7 +140,7 @@
                                     class="mdi mdi-soccer"></i><span class="hide-menu">Games</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="userscphp" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span
+                                href="users.php" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span
                                     class="hide-menu">Users</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link active"
