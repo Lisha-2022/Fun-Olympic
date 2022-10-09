@@ -5,7 +5,7 @@ include('../config.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST['id'];
     $title = $_POST['title'];
-    $description $_POST['description'];
+    $description = $_POST['description'];
 
     if (($_FILES['thumbnail']['name']!="")){
         // Where the file is going to be stored

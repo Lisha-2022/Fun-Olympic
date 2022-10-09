@@ -1,3 +1,19 @@
+<?php include('Backend/admin-session.php'); ?>
+<?php include('Backend/config.php'); ?>
+<?php
+    if (isset($_GET['id']) && !empty($_GET['id'])){
+        $id = $_GET['id'];
+        $sql = "SELECT * FROM medal_standing where id = $id";
+        $result = $conn->query($sql);
+
+        // Associative array
+        $row = $result->fetch_assoc();
+        $conn->close();
+    }
+    else{
+        header('Location: medal.php');
+    }
+?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -198,44 +214,45 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <form action="#">
+                            <form action="Backend/Medal/update.php" method="POST">
+                            <input type="hidden" name="id" value="<?php echo $id; ?>">
                                 <div class="mb-3 row">
-                                    <label for="" class="col-md-2 col-form-label">Title</label>
+                                    <label for="" class="col-md-2 col-form-label">Country</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                        <input type="text" name="country" value="<?php echo $row['country'] ?>" class="form-control" required />
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Gold</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                        <input type="text" name="gold" value="<?php echo $row['gold'] ?>" class="form-control" required />
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Silver</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                        <input type="text" name="silver" value="<?php echo $row['silver'] ?>" class="form-control" required />
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Bronze</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                        <input type="text" name="bronze" value="<?php echo $row['bronze'] ?>" class="form-control" required />
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Total</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                        <input type="text" name="total" value="<?php echo $row['total'] ?>" class="form-control" required />
                                     </div>
                                 </div>
                                  
                                 <div class="col-md-12 text-end">
-                                    <a href="medal.php"  class="btn btn-primary" type="submit">Update</a>
+                                    <button class="btn btn-primary" type="submit">Update</button>
                                 </div>
                             
                                 <!-- <button class="btn btn-primary" type="submit">Add</button> -->

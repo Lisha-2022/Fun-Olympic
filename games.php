@@ -1,3 +1,5 @@
+<?php include('Backend/admin-session.php'); ?>
+<?php include('Backend/config.php'); ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -202,56 +204,51 @@
                                     
                                 </div>
                                 <div class="col-md-6 text-end">
-                                    <a href="add_games.php" class="btn btn-primary">Add</a>
+                                    <a href="games_add.php" class="btn btn-primary">Add</a>
                                     <a href="admin_dashboard.php" class="btn btn-primary">Back</a>
                                 </div>
                             </div>
                             <div class="table-responsive">
+                            <?php 
+                            if (isset($_SESSION['message']) && isset($_SESSION['msg_type'])){
+
+                                echo '<div class="alert alert-'.$_SESSION['msg_type'].'" role="alert">
+                                    '.$_SESSION['message'].'
+                                </div>';
+                                }
+                                unset($_SESSION['message']);
+                                unset($_SESSION['msg_type']);
+                            ?>
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Id</th>
+                                        <th scope="col">Id</th>
                                             <th scope="col">Game Title</th>
                                             <th scope="col">Category</th>
-                                            <th scope="col">Date Time</th>
+                                            <th scope="col">Game Time</th>
                                             <th scope="col">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>nepal vs bhutan 4 - 0 / Women's SAFF Championship </td>
-                                            <td>Football</td>
-                                            <td>2022-10-10, Wednesday,12:00 p.m</td>
-                                            <td><button class="btn btn-info text-white">Edit</button>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Lisha Panthi</td>
-                                            <td>Lisha@gmail.com</td>
-                                            <td>Pokhara</td>
-                                            <td><button class="btn btn-info text-white">Edit</button> 
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Lisha Panthi</td>
-                                            <td>Lisha@gmail.com</td>
-                                            <td>Pokhara</td>
-                                            <td><button class="btn btn-info text-white">Edit</button>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">4</th>
-                                            <td>Lisha Panthi</td>
-                                            <td>Lisha@gmail.com</td>
-                                            <td>Pokhara</td>
-                                            <td><button class="btn btn-info text-white">Edit</button>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">5</th>
-                                            <td>Praful Tamrakar</td>
-                                            <td>Praful@gmail.com</td>
-                                            <td>Kathmandu</td>
-                                            <td><button class="btn btn-info text-white">Edit</button>
+                                    <?php
+                                    $sql = "SELECT g.id, g.title, c.title as cat_title, g.game_time FROM games as g inner join categories c on g.category_id = c.id;";
+                                    $result = $conn->query($sql); 
+                                    if (!empty($result) && $result->num_rows > 0) {
+                                    // output data of each row
+                                    while($row = $result->fetch_assoc()) {
+                                        echo '<tr>
+                                        <th scope="row">'.$row['id'].'</th>
+                                        <td>'.$row['title'].'</td>
+                                        <td>'.$row['cat_title'].'</td>
+                                        <td>'.$row['game_time'].'</td>
+                                        <td><a href="games_edit.php?id='.$row['id'].'" class="btn btn-info text-white">Edit</a></td>
+                                    </tr>';
+                                    }
+                                    } else {
+                                        echo "<tr><td class='text-center' colspan='7'>No Records </td></tr>";
+                                    }
+                                    $conn->close();
+                                    ?>
                                     </tbody>
                                 </table>
                             </div>

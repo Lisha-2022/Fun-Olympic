@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $bronze = $_POST['bronze'];
     $total = $_POST['total'];
 
-    $sql = "UPDATE medal SET country='$country', gold='$gold', silver='$silver', bronze='$bronze', total='$total' WHERE id=$id";
+    $sql = "UPDATE medal_standing SET country='$country', gold='$gold', silver='$silver', bronze='$bronze', total='$total' WHERE id=$id";
 
     if ($conn->query($sql) === TRUE) {
         $_SESSION['message'] = "Medal Updated Successfully";

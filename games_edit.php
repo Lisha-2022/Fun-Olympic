@@ -1,5 +1,18 @@
 <?php include('Backend/admin-session.php'); ?>
 <?php include('Backend/config.php'); ?>
+<?php
+    if (isset($_GET['id']) && !empty($_GET['id'])){
+        $id = $_GET['id'];
+        $sql = "SELECT g.id, g.title, c.id as cat_id, c.title as cat_title, g.game_time, g.description FROM games as g inner join categories c on g.category_id = c.id where g.id = $id";
+        $result = $conn->query($sql);
+
+        // Associative array
+        $row = $result->fetch_assoc();
+    }
+    else{
+        header('Location: games.php');
+    }
+?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -9,12 +22,12 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords"
-        content="">
+        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Flexy lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Flexy admin lite design, Flexy admin lite dashboard bootstrap 5 dashboard template">
     <meta name="description"
-        content="">
+        content="Flexy Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>medal</title>
-    <!-- <link rel="canonical" href="https://www.wrappixel.com/templates/Flexy-admin-lite/" /> -->
+    <title>medal_edit</title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/Flexy-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/logo2.png">
     <!-- Custom CSS -->
@@ -60,14 +73,12 @@
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
                             <img src="images/logo2.png" height="80" width="150" alt="homepage" class="dark-logo" />
-                            <!-- Light Logo icon -->
-                            <!-- <img src="assets/images/logo-light-icon.png" alt="homepage" class="light-logo" /> -->
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <!-- <img src="images/main_logo.png" height="80" width="200" alt="homepage" class="dark-logo" /> -->
+                            <!-- <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" /> -->
                             <!-- Light Logo text -->
                             <!-- <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" /> -->
                         </span>
@@ -90,7 +101,7 @@
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                     
+                      
                     </ul>
                     <!-- ============================================================== -->
                     <!-- Right side toggle and nav items -->
@@ -99,16 +110,15 @@
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
-                        <li class="nav-item dropdown">
+                        <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="images/adminpic.png" alt="user" class="rounded-circle" width="31">
+                                <img src="images/adminpic.png" alt="user" class="rounded-circle" width="31">
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i>
                                     Logout</a>
-                               
                             </ul>
-                        </li>
+                        </li> -->
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
@@ -128,7 +138,7 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu">Home</span></a></li>
 
@@ -136,7 +146,7 @@
                                 href="pages-profile.html" aria-expanded="false"><i
                                     class="mdi mdi-soccer"></i><span class="hide-menu">Games</span></a></li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link active"
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="table-basic.html" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span
                                     class="hide-menu">Users</span></a></li>
 
@@ -147,19 +157,17 @@
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="icon-material.html" aria-expanded="false"><i class="mdi mdi-youtube-play"></i><span
                                     class="hide-menu">Top Videos</span></a></li>
-                                
-                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="icon-material.html" aria-expanded="false"><i class="mdi mdi-newspaper"></i><span
                                  class="hide-menu">News</span></a></li>
 
-                         <li class="sidebar-item selected"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="icon-material.html" aria-expanded="false"><i class="mdi mdi-seal"></i><span
                                  class="hide-menu">Medal</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="icon-material.html" aria-expanded="false"><i class="mdi mdi-chart-timeline"></i><span
                                  class="hide-menu">Schedule</span></a></li>
-
 
                     </ul>
 
@@ -184,14 +192,6 @@
                         
                         <h1 class="mb-0 fw-bold">Fun Olympic Game</h1> 
                     </div>
-                    <!-- <div class="col-6">
-                        <div class="text-end upgrade-btn">
-                            <a href="https://www.wrappixel.com/templates/flexy-bootstrap-admin-template/" class="btn btn-primary text-white"
-                                target="_blank">Upgrade to Pro</a>
-                        </div>
-                    </div> -->
-                </div>
-            </div>
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
@@ -201,68 +201,76 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-header">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h4 class="card-title">Medal Standings</h4>
-                                    
-                                </div>
+                                    <h4 class="card-title">Edit Game</h4><Br>
                                 
+                                </div>
                                 <div class="col-md-6 text-end">
-                                    <a href="medal_add.php" class="btn btn-primary">Add</a>
-                                    <a href="admin_dashboard.php" class="btn btn-primary">Back</a>
+                                    <a href="medal.php"class="btn btn-primary">Back</a>
                                 </div>
-                                
-                                
                             </div>
-                            <div class="table-responsive">
-                            <?php 
-                            if (isset($_SESSION['message']) && isset($_SESSION['msg_type'])){
+                        </div>
+                        <div class="card-body">
+                        <form action="Backend/Games/update.php" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="id" value="<?php echo $id; ?>">
+                                <div class="mb-3 row">
+                                    <label for="" class="col-md-2 col-form-label">Title</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="title" value="<?php echo $row['title']; ?>" class="form-control" required/>
+                                    </div>
+                                </div>
 
-                                echo '<div class="alert alert-'.$_SESSION['msg_type'].'" role="alert">
-                                    '.$_SESSION['message'].'
-                                </div>';
-                                }
-                                unset($_SESSION['message']);
-                                unset($_SESSION['msg_type']);
-                            ?>
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Id</th>
-                                            <th scope="col">Country</th>
-                                            <th scope="col">GOLD</th>
-                                            <th scope="col">SILVER</th>
-                                            <th scope="col">BRONZE</th>
-                                            <th scope="col">Total</th>
-                                            <th scope="col">Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php
-                                    $sql = "SELECT * FROM medal_standing";
-                                    $result = $conn->query($sql); 
-                                    if (!empty($result) && $result->num_rows > 0) {
-                                    // output data of each row
-                                    while($row = $result->fetch_assoc()) {
-                                        echo '<tr>
-                                        <th scope="row">'.$row['id'].'</th>
-                                        <td>'.$row['country'].'</td>
-                                        <td>'.$row['gold'].'</td>
-                                        <td>'.$row['silver'].'</td>
-                                        <td>'.$row['bronze'].'</td>
-                                        <td>'.$row['total'].'</td>
-                                        <td><a href="medal_edit.php?id='.$row['id'].'" class="btn btn-info text-white">Edit</a></td>
-                                    </tr>';
-                                    }
-                                    } else {
-                                        echo "<tr><td class='text-center' colspan='7'>No Records </td></tr>";
-                                    }
-                                    $conn->close();
-                                    ?>
-                                    </tbody>
-                                </table>
-                            </div>
+                                <div class="mb-3 row">
+                                    <label for="" class="col-md-2 col-form-label">categories</label>
+                                    <div class="col-sm-10">
+                                        <select name="category_id" class="form-control" required>
+                                            <option value="">-- Select Category --</option>
+                                            <?php
+                                            $sqll = "SELECT * from categories";
+                                            $resultt = $conn->query($sqll); 
+                                            $conn->close();
+                                            while($roww = $resultt->fetch_assoc()) {
+                                                echo '<option value="'.$roww['id'].'" '.($roww['id'] == $row['cat_id'] ? 'selected' : '').'>'.$roww['title'].'</option>';
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="staticEmail" class="col-sm-2 col-form-label">Game Time</label>
+                                    <div class="col-sm-10">
+                                      <input type="datetime-local" value="<?php echo $row['game_time']; ?>" name="game_time" class="form-control" required/>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label for="staticEmail" class="col-sm-2 col-form-label">Video</label>
+                                    <div class="col-sm-10">
+                                      <input type="file" name="video" class="form-control"/>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label for="staticEmail" class="col-sm-2 col-form-label">Thumbnail</label>
+                                    <div class="col-sm-10">
+                                      <input type="file" name="image" class="form-control"/>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label for="staticEmail" class="col-sm-2 col-form-label">Description</label>
+                                    <div class="col-sm-10">
+                                      <textarea name="description" class="form-control" required><?php echo $row['description']; ?></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 text-end">
+                                    <button class="btn btn-primary" type="submit">Save</button>
+                                </div>
+                            
+                                <!-- <button class="btn btn-primary" type="submit">Add</button> -->
+                            </form>
                         </div>
                     </div>
                 </div>

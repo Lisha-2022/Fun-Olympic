@@ -1,3 +1,4 @@
+<?php include('Backend/admin-session.php'); ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -198,44 +199,44 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <form action="#">
+                            <form action="Backend/Medal/add.php" method="POST">
                                 <div class="mb-3 row">
-                                    <label for="" class="col-md-2 col-form-label">Title</label>
+                                    <label for="" class="col-md-2 col-form-label">Country</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                        <input type="text" name="country" class="form-control" required />
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Gold</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                        <input type="number" name="gold" class="form-control" required />
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Silver</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                        <input type="number" name="silver" class="form-control" required />
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Bronze</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                        <input type="number" name="bronze" class="form-control" required />
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Total</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                        <input type="number" name="total" class="form-control" required />
                                     </div>
                                 </div>
                                  
                                 <div class="col-md-12 text-end">
-                                    <a href="medal.php"  class="btn btn-primary" type="submit">Add</a>
+                                    <button class="btn btn-primary" type="submit">Add</button>
                                 </div>
                             
                                 <!-- <button class="btn btn-primary" type="submit">Add</button> -->

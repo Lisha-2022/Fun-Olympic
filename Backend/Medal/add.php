@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $bronze = $_POST['bronze'];
     $total = $_POST['total'];
 
-    $sql = "INSERT into category (country,gold,silver,bronze,total) values ('$country','$gold','$silver','$bronze','$total',)";
+    $sql = "INSERT into medal_standing (country,gold,silver,bronze,total) values ('$country','$gold','$silver','$bronze','$total')";
 
 
     if ($conn->query($sql) === TRUE) {
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['msg_type'] = "success";
         header('Location: ../../medal.php');
     } else {
-        $_SESSION['message'] = "Error updating record: " . $conn->error;
+        $_SESSION['message'] = "Error adding record: " . $conn->error;
         $_SESSION['msg_type'] = "danger";
         header('Location: ../../medal.php');
     }
