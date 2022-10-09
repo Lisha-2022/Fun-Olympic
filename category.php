@@ -1,3 +1,5 @@
+<?php include('Backend/admin-session.php'); ?>
+<?php include('Backend/config.php'); ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -210,6 +212,16 @@
                                 </div>
                             </div>
                             <div class="table-responsive">
+                            <?php 
+                            if (isset($_SESSION['message']) && isset($_SESSION['msg_type'])){
+
+                                echo '<div class="alert alert-'.$_SESSION['msg_type'].'" role="alert">
+                                    '.$_SESSION['message'].'
+                                </div>';
+                                }
+                                unset($_SESSION['message']);
+                                unset($_SESSION['msg_type']);
+                            ?>
                                 <table class="table">
                                     <thead>
                                         <tr>
@@ -219,31 +231,23 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Football</td>
-                                            <td><button class="btn btn-info text-white">Edit</button></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Race</td>
-                                            <td><button class="btn btn-info text-white">Edit</button></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Baseball</td>
-                                            <td><button class="btn btn-info text-white">Edit</button></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">4</th>
-                                            <td>Long Tennis</td>
-                                            <td><button class="btn btn-info text-white">Edit</button></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">5</th>
-                                            <td>Vollyball</td>
-                                            <td><button class="btn btn-info text-white">Edit</button></td>
-                                        </tr>
+                                    <?php
+                                    $sql = "SELECT id, title, description, created_at FROM news";
+                                    $result = $conn->query($sql); 
+                                    if (!empty($result) && $result->num_rows > 0) {
+                                    // output data of each row
+                                    while($row = $result->fetch_assoc()) {
+                                        echo '<tr>
+                                        <th scope="row">'.$row['id'].'</th>
+                                        <td>'.$row['title'].'</td>
+                                        <td><a href="update_category.php?id='.$row['id'].'" class="btn btn-info text-white">Edit</a></td>
+                                    </tr>';
+                                    }
+                                    } else {
+                                        echo "<tr><td class='text-center' colspan='7'>No Records </td></tr>";
+                                    }
+                                    $conn->close();
+                                    ?>
                                     </tbody>
                                 </table>
                             </div>
