@@ -72,8 +72,8 @@
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
-                        <a class="btn btn-outline-primary ms-2" href="login.php">Login</a>
-                        <a class="btn btn-outline-primary ms-2" href="register.php">Register</a>
+                        <!-- <a class="btn btn-outline-primary ms-2" href="login.php">Login</a>
+                        <a class="btn btn-outline-primary ms-2" href="register.php">Register</a> -->
                     </div>
                 </div>
             </nav>
@@ -136,6 +136,35 @@
                                 <h6>Wahh</h6>
                                 <small>1 min Ago</small>
                             </div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-md-5">
+                                <img src="imgs/login.jpg" width="150" height="100"/>
+                            </div>
+                            <div class="col-md-7">
+                                <h6>Wahh</h6>
+                                <small>1 min Ago</small>
+                            </div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-md-5">
+                                <img src="imgs/login.jpg" width="150" height="100"/>
+                            </div>
+                            <div class="col-md-7">
+                                <h6>Wahh</h6>
+                                <small>1 min Ago</small>
+                            </div>
+                        </div>
+                         <div class="row my-2">
+                            <div class="col-md-5">
+                                <img src="imgs/login.jpg" width="150" height="100"/>
+                            </div>
+                            <div class="col-md-7">
+                                <h6>Wahh</h6>
+                                <small>1 min Ago</small>
+                            </div>
+                        /div>
+                            
                         </div>
                     </div>
                 </div>

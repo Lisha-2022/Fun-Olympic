@@ -140,34 +140,35 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
+                                href="Home.php" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu">Home</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="pages-profile.html" aria-expanded="false"><i
+                                href="games.php" aria-expanded="false"><i
                                     class="mdi mdi-soccer"></i><span class="hide-menu">Games</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="table-basic.html" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span
+                                href="tusers.php" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span
                                     class="hide-menu">Users</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-material.html" aria-expanded="false"><i class="mdi mdi-format-list-bulleted-type"></i><span
+                                href="category.php" aria-expanded="false"><i class="mdi mdi-format-list-bulleted-type"></i><span
                                     class="hide-menu">Category</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-material.html" aria-expanded="false"><i class="mdi mdi-youtube-play"></i><span
+                                href="top_videos.php" aria-expanded="false"><i class="mdi mdi-youtube-play"></i><span
                                     class="hide-menu">Top Videos</span></a></li>
-                                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-material.html" aria-expanded="false"><i class="mdi mdi-newspaper"></i><span
+
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="news.php" aria-expanded="false"><i class="mdi mdi-newspaper"></i><span
                                  class="hide-menu">News</span></a></li>
 
                          <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-material.html" aria-expanded="false"><i class="mdi mdi-seal"></i><span
+                                href="medal.php" aria-expanded="false"><i class="mdi mdi-seal"></i><span
                                  class="hide-menu">Medal</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-material.html" aria-expanded="false"><i class="mdi mdi-chart-timeline"></i><span
+                                href="schedule.php" aria-expanded="false"><i class="mdi mdi-chart-timeline"></i><span
                                  class="hide-menu">Schedule</span></a></li>
 
                     </ul>

@@ -3,10 +3,9 @@ session_start();
 include('../config.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id = $_POST['id'];
     $title = $_POST['title'];
 
-    $sql = "UPDATE category SET title='$title' WHERE id=$id";
+    $sql = "UPDATE categories SET title='$title' WHERE id=$id";
 
     if ($conn->query($sql) === TRUE) {
         $_SESSION['message'] = "Category Updated Successfully";

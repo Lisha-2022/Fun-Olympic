@@ -1,3 +1,5 @@
+<?php include('Backend/admin-session.php'); ?>
+<?php include('Backend/config.php'); ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -52,7 +54,7 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="schedule.php">
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -126,36 +128,36 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="Home.php" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu">Home</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="pages-profile.html" aria-expanded="false"><i
+                                href="games.php" aria-expanded="false"><i
                                     class="mdi mdi-soccer"></i><span class="hide-menu">Games</span></a></li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link active"
-                                href="table-basic.html" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="tusers.php" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span
                                     class="hide-menu">Users</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-material.html" aria-expanded="false"><i class="mdi mdi-format-list-bulleted-type"></i><span
+                                href="category.php" aria-expanded="false"><i class="mdi mdi-format-list-bulleted-type"></i><span
                                     class="hide-menu">Category</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-material.html" aria-expanded="false"><i class="mdi mdi-youtube-play"></i><span
+                                href="top_videos.php" aria-expanded="false"><i class="mdi mdi-youtube-play"></i><span
                                     class="hide-menu">Top Videos</span></a></li>
-                                
-                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-material.html" aria-expanded="false"><i class="mdi mdi-newspaper"></i><span
+
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="news.php" aria-expanded="false"><i class="mdi mdi-newspaper"></i><span
                                  class="hide-menu">News</span></a></li>
 
                          <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-material.html" aria-expanded="false"><i class="mdi mdi-seal"></i><span
+                                href="medal.php" aria-expanded="false"><i class="mdi mdi-seal"></i><span
                                  class="hide-menu">Medal</span></a></li>
 
                         <li class="sidebar-item selected"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-material.html" aria-expanded="false"><i class="mdi mdi-chart-timeline"></i><span
+                                href="schedule.php" aria-expanded="false"><i class="mdi mdi-chart-timeline"></i><span
                                  class="hide-menu">Schedule</span></a></li>
 
 
@@ -214,6 +216,16 @@
                                 
                             </div>
                             <div class="table-responsive">
+                            <?php 
+                            if (isset($_SESSION['message']) && isset($_SESSION['msg_type'])){
+
+                                echo '<div class="alert alert-'.$_SESSION['msg_type'].'" role="alert">
+                                    '.$_SESSION['message'].'
+                                </div>';
+                                }
+                                unset($_SESSION['message']);
+                                unset($_SESSION['msg_type']);
+                            ?>
                                 <table class="table">
                                     <thead>
                                         <tr>
@@ -224,36 +236,25 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>nepal vs bhutan 4 - 0 / Women's SAFF Championship </td>
-                                            <td>20222109,Suday</td>
-                                            <td><a href="schedule_edit.php" class="btn btn-info text-white">Edit</a>
-                                        </tr>
-                                        <tr>
-                                        <th scope="row">2</th>
-                                            <td>nepal vs bhutan 4 - 0 / Women's SAFF Championship </td>
-                                            <td>20222109,Suday</td>
-                                            <td><a href="schedule_edit.php" class="btn btn-info text-white">Edit</a>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>nepal vs bhutan 4 - 0 / Women's SAFF Championship </td>
-                                            <td>20222109,Suday</td>
-                                            <td><a href="schedule_edit.php" class="btn btn-info text-white">Edit</a>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">4</th>
-                                            <td>nepal vs bhutan 4 - 0 / Women's SAFF Championship </td>
-                                            <td>20222109,Suday</td>
-                                            <td><a href="schedule_edit.php" class="btn btn-info text-white">Edit</a>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">5</th>
-                                            <td>nepal vs bhutan 4 - 0 / Women's SAFF Championship </td>
-                                            <td>20222109,Suday</td>
-                                            <td><a href="schedule_edit.php" class="btn btn-info text-white">Edit</a>
-                                        </tr>
+                                    <?php
+                                    $sql = "SELECT id, title, description, created_at FROM schedule";
+                                    $result = $conn->query($sql); 
+                                    if (!empty($result) && $result->num_rows > 0) {
+                                    // output data of each row
+                                    while($row = $result->fetch_assoc()) {
+                                        echo '<tr>
+                                        <th scope="row">'.$row['id'].'</th>
+                                        <td>'.$row['title'].'</td>
+                                        <td>'.$row['time'].'</td>
+                                        <td><a href="schedule_edit.php?id='.$row['id'].'" class="btn btn-info text-white">Edit</a></td>
+                                    </tr>';
+                                    }
+                                    } else {
+                                        echo "<tr><td class='text-center' colspan='7'>No Records </td></tr>";
+                                    }
+                                    $conn->close();
+                                    ?> 
+                                       
                                     </tbody>
                                 </table>
                             </div>

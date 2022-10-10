@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $_POST['title'];
     $time = $_POST['time'];
 
-    $sql = "UPDATE schedule SET title='$title', time='$time' WHERE id=$id";
+    $sql = "UPDATE game_schedule SET game_title='$game_title', game_time='$game_time' WHERE id=$id;
 
 
     if ($conn->query($sql) === TRUE) {
