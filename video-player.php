@@ -1,4 +1,17 @@
-<?php session_start();
+<?php include('Backend/user-session.php'); ?>
+<?php include('Backend/config.php'); ?>
+<?php
+    if (isset($_GET['id']) && !empty($_GET['id'])){
+        $id = $_GET['id'];
+        $sql = "SELECT * FROM games where id = $id";
+        $result = $conn->query($sql);
+
+        // Associative array
+        $row = $result->fetch_assoc();
+    }
+    else{
+        header('Location: user_dashboard.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -84,59 +97,42 @@
                 <div class="row py-5">
                     <div class="col-md-9">
                         <div class="ratio ratio-16x9">
-                            <iframe src="https://www.youtube.com/embed/L0sLfwQaHHM" title="YouTube video" allowfullscreen></iframe>
+                            <video width="320" height="240" autoplay>
+                                <source src="./games/videos/<?php echo $row['video_path']; ?>" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                         <br>
-                        <h3>Video Title</h3>
-                        <p>Responsive containers allow you to specify a class that is 100% wide until the specified breakpoint is reached, after which we apply max-widths for each of the higher breakpoints. For example, .container-sm is 100% wide to start until the sm breakpoint is reached, where it will scale up with md, lg, xl, and xxl.</p>
+                        <h3><?php echo $row['title']; ?></h3>
+                        <p><?php echo $row['description']; ?></p>
                         
                         <div class="text-end">
                         <a href="#"><i class='bx bx-sm bxs-like'></i></a>
                         <a href="#"><i class='bx bx-sm bxs-dislike'></i></a>
                         <button class="btn btn-danger text-white">Subscribe</button>
                         </div>
-
                         <div>
                             <h3>Comments</h3><hr>
                         </div>
                     </div>
                     <div class="col-md-3 my-3">
-                        <div class="row my-2">
-                            <div class="col-md-5">
-                                <img src="imgs/login.jpg" width="150" height="100"/>
-                            </div>
-                            <div class="col-md-7">
-                                <h6>Wahh</h6>
-                                <small>1 min Ago</small>
-                            </div>
-                        </div>
-                        <div class="row my-2">
-                            <div class="col-md-5">
-                                <img src="imgs/login.jpg" width="150" height="100"/>
-                            </div>
-                            <div class="col-md-7">
-                                <h6>Wahh</h6>
-                                <small>1 min Ago</small>
-                            </div>
-                        </div>
-                        <div class="row my-2">
-                            <div class="col-md-5">
-                                <img src="imgs/login.jpg" width="150" height="100"/>
-                            </div>
-                            <div class="col-md-7">
-                                <h6>Wahh</h6>
-                                <small>1 min Ago</small>
-                            </div>
-                        </div>
-                        <div class="row my-2">
-                            <div class="col-md-5">
-                                <img src="imgs/login.jpg" width="150" height="100"/>
-                            </div>
-                            <div class="col-md-7">
-                                <h6>Wahh</h6>
-                                <small>1 min Ago</small>
-                            </div>
-                        </div>
+                      <?php  $sql = "SELECT * from games";
+                            $result = $conn->query($sql); 
+                            $conn->close();
+                            if (!empty($result) && $result->num_rows > 0) {
+                                while($row = $result->fetch_assoc()) {
+                                    echo '<a style="text-decoration:none; color: inherit;" href="video-player.php?id='.$row['id'].'"><div class="row my-2">
+                                    <div class="col-md-5">
+                                        <img src="games/thumbnails/'.$row['thumbnail'].'" width="150" height="100"/>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <h6>'.$row['title'].'</h6>
+                                        <small>1 min Ago</small>
+                                    </div>
+                                </div></a>';
+                                }
+                            }
+                        ?>
                     </div>
                 </div>
                 <!-- FOOTER -->
