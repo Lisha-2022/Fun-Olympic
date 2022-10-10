@@ -3,7 +3,7 @@
 <?php
     if (isset($_GET['id']) && !empty($_GET['id'])){
         $id = $_GET['id'];
-        $sql = "SELECT * FROM medal_standing where id = $id";
+        $sql = "SELECT * FROM game_schedule where id = $id";
         $result = $conn->query($sql);
 
         // Associative array
@@ -148,7 +148,7 @@
                                     class="mdi mdi-soccer"></i><span class="hide-menu">Games</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="tusers.php" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span
+                                href="users.php" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span
                                     class="hide-menu">Users</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
@@ -220,14 +220,14 @@
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Title</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="title" value="<?php echo $row['country'] ?>" class="form-control" required />
+                                        <input type="text" class="form-control" name="title" value="<?php echo $row['game_title'] ?>" class="form-control" required />
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Time</label>
                                     <div class="col-sm-10">
-                                    <input type="datetime-local" value="<?php echo $row['game_time']; ?>" name="game_time" class="form-control" required/>
+                                    <input type="datetime-local" value="<?php echo $row['game_time']; ?>" name="time" class="form-control" required/>
                                     </div>
                                 </div>
                                  

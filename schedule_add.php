@@ -133,7 +133,7 @@
                                     class="mdi mdi-soccer"></i><span class="hide-menu">Games</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="tusers.php" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span
+                                href="users.php" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span
                                     class="hide-menu">Users</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
@@ -203,14 +203,14 @@
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Title</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                        <input type="text" name="title" class="form-control" required />
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Time</label>
                                     <div class="col-sm-10">
-                                    <input type="datetime-local" name="game_time" class="form-control" required/>
+                                    <input type="datetime-local" name="time" class="form-control" required/>
                                     </div>
                                     </div>
                                 </div>

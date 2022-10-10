@@ -1,4 +1,5 @@
-<?php include('Backend/user-session.php') ?>
+<?php include('Backend/user-session.php'); ?>
+<?php include('Backend/config.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,7 +56,7 @@
                                 <a class="nav-link" href="#">Categories</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link">Sports</a>
+                                <a href="top_videos.php" class="nav-link">Sports</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link">Watch</a>
@@ -89,20 +90,28 @@
         <main>
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <ol class="carousel-indicators">
-                        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
-                        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
-                        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+                            <?php
+                                    $sql = "SELECT * FROM games";
+                                    $slider = 0;
+                                    $result = $conn->query($sql); 
+                                    while($row = $result->fetch_assoc()) {
+                                        echo '<li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="'.$slider.'"></li>';
+                                        $slider++;
+                                    }
+                            ?>
                     </ol>
                     <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active">
-                            <img class="w-100" style="height: 700px; object-fit:cover;" src="imgs/carousel/carousel-1.jpg" alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="w-100" style="height: 700px; object-fit:cover;" src="imgs/carousel/carousel-2.jpg" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="w-100" style="height: 700px; object-fit:cover;" src="imgs/carousel/carousel-3.jpg" alt="Third slide">
-                        </div>
+                        <?php 
+                                    $slid = 0;
+                                    $result2 = $conn->query($sql); 
+                                    while($row1 = $result2->fetch_assoc()) {
+                                        echo 1;
+                                        echo '<div class="carousel-item '.($slid == 0 ? 'active': '').'">
+                                        <img class="w-100" style="height: 700px; object-fit:cover;" src="games/thumbnails/'.$row1['thumbnail'].'" alt="'.$row['title'].'">
+                                    </div>';
+                                    $slid ++;
+                                    }
+                        ?>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -122,50 +131,26 @@
                                 <h2> Latest News </h2>
                             </div>
                             <div class="col-md-6 text-end">
-                                <a class="btn btn-primary">View All </a>
+                                <a href="all_news.php" class="btn btn-primary">View All </a>
                             <div>
                         </div>
                     </div>  
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img src="imgs/login.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img src="imgs/login.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img src="imgs/login.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img src="imgs/login.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
+                        <?php 
+                                    $sql1 = "SELECT * from news limit 4";
+                                    $result3 = $conn->query($sql1); 
+                                    while($news = $result3->fetch_assoc()) {
+                                        echo '<div class="col-md-3">
+                                        <div class="card">
+                                            <img src="uploads/'.$news['thumbnail'].'" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">'.$news['title'].'</h5>
+                                                <p class="card-text">'.$news['description'].'</p>
+                                                <a href="view_news.php?id='.$news['id'].'" class="btn btn-primary">View</a>
+                                            </div>
+                                        </div>
+                                    </div>';
+                                    }
+                        ?>
                 </div>
 
                     <div class="row p-3">
@@ -180,46 +165,22 @@
                         </div>
                     </div> 
 
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img src="imgs/login.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img src="imgs/login.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img src="imgs/login.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img src="imgs/login.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
+                    <?php 
+                            $sql2 = "SELECT * from games limit 4";
+                            $result4 = $conn->query($sql2); 
+                            while($video = $result4->fetch_assoc()) {
+                                echo '<div class="col-md-3">
+                                <div class="card">
+                                    <img src="games/thumbnails/'.$video['thumbnail'].'" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">'.$video['title'].'</h5>
+                                        <p class="card-text">'.$video['description'].'</p>
+                                        <a href="video-player.php?id='.$video['id'].'" class="btn btn-primary">View</a>
+                                    </div>
+                                </div>
+                            </div>';
+                            }
+                        ?>
                 </div>
 
                 <div class="row p-3">
@@ -233,46 +194,22 @@
                             <div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img src="imgs/login.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img src="imgs/login.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img src="imgs/login.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img src="imgs/login.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
+                    <?php 
+                            $sql2 = "SELECT * from games limit 4";
+                            $result4 = $conn->query($sql2); 
+                            while($video = $result4->fetch_assoc()) {
+                                echo '<div class="col-md-3">
+                                <div class="card">
+                                    <img src="games/thumbnails/'.$video['thumbnail'].'" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">'.$video['title'].'</h5>
+                                        <p class="card-text">'.$video['description'].'</p>
+                                        <a href="video-player.php?id='.$video['id'].'" class="btn btn-primary">View</a>
+                                    </div>
+                                </div>
+                            </div>';
+                            }
+                        ?>
                 </div>
 
                
@@ -282,16 +219,16 @@
                             <div class="col-md-6">
                                 <h2>Medal Standing </h2>
                             </div>
-                            <div class="col-md-6 text-end">
+                            <!-- <div class="col-md-6 text-end">
                                 <a class="btn btn-primary">View All </a>
-                            <div>
+                            <div> -->
                         </div>
                     </div>
                     <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">Id</th>
-                                <th scope="col">Team</th>
+                                <th scope="col">Country</th>
                                 <th scope="col">Gold</th>
                                 <th scope="col">Silver</th>
                                 <th scope="col">Bronze</th>
@@ -299,29 +236,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                <td>@fat</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                                <td>@twitter</td>
-                                <td>@twitter</td>
-                            </tr>
+                        <?php 
+                            $sql3 = "SELECT * from medal_standing";
+                            $result5 = $conn->query($sql3); 
+                            while($medal = $result5->fetch_assoc()) {
+                                echo ' <tr>
+                                <th scope="row">'.$medal['id'].'</th>
+                                <td>'.$medal['country'].'</td>
+                                <td>'.$medal['gold'].'</td>
+                                <td>'.$medal['silver'].'</td>
+                                <td>'.$medal['bronze'].'</td>
+                                <td>'.$medal['total'].'</td>
+                            </tr>';
+                            }
+                        ?>
+                           
                         </tbody>
                     </table>
                 </div>
@@ -330,11 +259,11 @@
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-6">
-                                <h2>Game Schedual </h2>
+                                <h2>Game Schedule </h2>
                             </div>
-                            <div class="col-md-6 text-end">
+                            <!-- <div class="col-md-6 text-end">
                                 <a class="btn btn-primary">View All </a>
-                            <div>
+                            <div> -->
                         </div>
                     </div>
                     <table class="table table-striped">
@@ -343,26 +272,20 @@
                                 <th scope="col">Id</th>
                                 <th scope="col">Game Title</th>
                                 <th scope="col">Time</th>
-                                
+                            </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                
-                            </tr>
+                        <?php 
+                            $sql4 = "SELECT * from game_schedule";
+                            $result6 = $conn->query($sql4); 
+                            while($schedule = $result6->fetch_assoc()) {
+                                echo '<tr>
+                                <th scope="row">'.$schedule['id'].'</th>
+                                <td>'.$schedule['game_title'].'</td>
+                                <td>'.$schedule['game_time'].'</td>
+                            </tr>';
+                            }
+                        ?>
                         </tbody>
                     </table>
                 </div>

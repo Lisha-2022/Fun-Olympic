@@ -137,7 +137,7 @@
                                     class="mdi mdi-soccer"></i><span class="hide-menu">Games</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="tusers.php" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span
+                                href="users.php" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span
                                     class="hide-menu">Users</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
@@ -237,15 +237,15 @@
                                     </thead>
                                     <tbody>
                                     <?php
-                                    $sql = "SELECT id, title, description, created_at FROM schedule";
+                                    $sql = "SELECT * FROM game_schedule";
                                     $result = $conn->query($sql); 
                                     if (!empty($result) && $result->num_rows > 0) {
                                     // output data of each row
                                     while($row = $result->fetch_assoc()) {
                                         echo '<tr>
                                         <th scope="row">'.$row['id'].'</th>
-                                        <td>'.$row['title'].'</td>
-                                        <td>'.$row['time'].'</td>
+                                        <td>'.$row['game_title'].'</td>
+                                        <td>'.$row['game_time'].'</td>
                                         <td><a href="schedule_edit.php?id='.$row['id'].'" class="btn btn-info text-white">Edit</a></td>
                                     </tr>';
                                     }

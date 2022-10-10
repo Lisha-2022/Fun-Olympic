@@ -16,14 +16,17 @@ if (mysqli_num_rows($result) > 0) {
   while($row = mysqli_fetch_assoc($result)) {
     $_SESSION['name'] = $row['f_name'] .' '. $row['l_name'];
     $_SESSION['email'] = $row['email'];
+    $_SESSION['id'] = $row['id'];
     $_SESSION['address'] = $row['address'];
     $_SESSION['phone'] = $row['phone'];
     $_SESSION['role'] = $row['role'];
+    $_SESSION['has_paid'] = $row['has_paid'];
   }
   if ($_SESSION['role'] == 'user'){
     header('Location: ../user_dashboard.php');
   }else{
     header('Location: ../admin_dashboard.php');
+    $_SESSION['has_paid'] = 1;
   }
 } else {
     $_SESSION['message'] = "Your email or password is mismatched";

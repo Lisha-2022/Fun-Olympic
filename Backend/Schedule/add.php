@@ -3,11 +3,10 @@ session_start();
 include('../config.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id = $_POST['id'];
     $title = $_POST['title'];
     $time = $_POST['time'];
 
-    $sql = "INSERT into game_schedule (game_title, game_time) values ('$game_title', '$game_time')";
+    $sql = "INSERT into game_schedule (game_title, game_time) values ('$title', '$time')";
 
 
     if ($conn->query($sql) === TRUE) {
