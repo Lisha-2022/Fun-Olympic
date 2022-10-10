@@ -132,7 +132,7 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="user_dashboard.php" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
+                                href="Home.php" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu">Home</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
@@ -140,10 +140,10 @@
                                     class="mdi mdi-soccer"></i><span class="hide-menu">Games</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="users.php" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span
+                                href="tusers.php" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span
                                     class="hide-menu">Users</span></a></li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link active"
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="category.php" aria-expanded="false"><i class="mdi mdi-format-list-bulleted-type"></i><span
                                     class="hide-menu">Category</span></a></li>
 

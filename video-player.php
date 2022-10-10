@@ -85,8 +85,8 @@
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
-                        <a class="btn btn-outline-primary ms-2" href="login.php">Login</a>
-                        <a class="btn btn-outline-primary ms-2" href="register.php">Register</a>
+                        <!-- <a class="btn btn-outline-primary ms-2" href="login.php">Login</a>
+                        <a class="btn btn-outline-primary ms-2" href="register.php">Register</a> -->
                     </div>
                 </div>
             </nav>

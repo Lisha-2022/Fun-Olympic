@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $_POST['title'];
     $time = $_POST['time'];
 
-    $sql = "INSERT into news (title,time) values ('$title', '$time')";
+    $sql = "INSERT into game_schedule (game_title, game_time) values ('$game_title', '$game_time')";
 
 
     if ($conn->query($sql) === TRUE) {

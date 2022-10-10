@@ -1,3 +1,19 @@
+<?php include('Backend/admin-session.php'); ?>
+<?php include('Backend/config.php'); ?>
+<?php
+    if (isset($_GET['id']) && !empty($_GET['id'])){
+        $id = $_GET['id'];
+        $sql = "SELECT * FROM medal_standing where id = $id";
+        $result = $conn->query($sql);
+
+        // Associative array
+        $row = $result->fetch_assoc();
+        $conn->close();
+    }
+    else{
+        header('Location: medal.php');
+    }
+?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -124,34 +140,35 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
+                                href="Home.php" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu">Home</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="pages-profile.html" aria-expanded="false"><i
+                                href="games.php" aria-expanded="false"><i
                                     class="mdi mdi-soccer"></i><span class="hide-menu">Games</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="table-basic.html" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span
+                                href="tusers.php" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span
                                     class="hide-menu">Users</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-material.html" aria-expanded="false"><i class="mdi mdi-format-list-bulleted-type"></i><span
+                                href="category.php" aria-expanded="false"><i class="mdi mdi-format-list-bulleted-type"></i><span
                                     class="hide-menu">Category</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-material.html" aria-expanded="false"><i class="mdi mdi-youtube-play"></i><span
+                                href="top_videos.php" aria-expanded="false"><i class="mdi mdi-youtube-play"></i><span
                                     class="hide-menu">Top Videos</span></a></li>
-                                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-material.html" aria-expanded="false"><i class="mdi mdi-newspaper"></i><span
+
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="news.php" aria-expanded="false"><i class="mdi mdi-newspaper"></i><span
                                  class="hide-menu">News</span></a></li>
 
                          <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-material.html" aria-expanded="false"><i class="mdi mdi-seal"></i><span
+                                href="medal.php" aria-expanded="false"><i class="mdi mdi-seal"></i><span
                                  class="hide-menu">Medal</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-material.html" aria-expanded="false"><i class="mdi mdi-chart-timeline"></i><span
+                                href="schedule.php" aria-expanded="false"><i class="mdi mdi-chart-timeline"></i><span
                                  class="hide-menu">Schedule</span></a></li>
 
                     </ul>
@@ -198,23 +215,24 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <form action="#">
+                        <form action="Backend/Schedule/update.php" method="POST">
+                            <input type="hidden" name="id" value="<?php echo $id; ?>">
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Title</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                        <input type="text" class="form-control" name="title" value="<?php echo $row['country'] ?>" class="form-control" required />
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Time</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                    <input type="datetime-local" value="<?php echo $row['game_time']; ?>" name="game_time" class="form-control" required/>
                                     </div>
                                 </div>
                                  
                                 <div class="col-md-12 text-end">
-                                    <a href="schedule.php"  class="btn btn-primary" type="submit">Update</a>
+                                    <button  class="btn btn-primary" type="submit">Update</button>
                                 </div>
                             
                                 <!-- <button class="btn btn-primary" type="submit">Add</button> -->
