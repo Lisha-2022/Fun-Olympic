@@ -56,7 +56,7 @@ session_start();
                                 <div class="mb-4">
                                     <label for="signup-4-Password" class="ms-5 form-label text-secondary fw-normal">Password</label>
                                     <div class="input-group">
-                                        <i class="p-md-3 fa fa-lock"></i><input type="text" name="password" class="form-control" id="signup-4-Password"
+                                        <i class="p-md-3 fa fa-lock"></i><input type="password" name="password" class="form-control" id="signup-4-Password"
                                             aria-describedby="infotext" required>
                                     </div>
                                 </div>
@@ -79,9 +79,12 @@ session_start();
                                 
                                 <div>
                                 <button type="submit" class="ms-5 btn btn-primary" style="width: 96.5%">Login</button>
+
                                     <div class="text-center">
-                                 <p class="text-secondary pt-3 small">Dont have an account? <a href="register.php"
-                                        class="text-decoration-none ">Register</a></p>
+                                    <!-- <a class="text-secondary pt-3 small href="forgot_Password_1.php">Forgot Password</a>  -->
+                                        
+                                    <p class="text-secondary pt-3 small">Dont have an account? <a href="register.php"
+                                            class="text-decoration-none ">Register</a></p>
                                 </div>
                                        
                                 </div>

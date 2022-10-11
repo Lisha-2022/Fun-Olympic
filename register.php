@@ -122,7 +122,7 @@
                                 <div class="mb-4">
                                     <label for="signup-4-Password" class="ms-5 form-label text-secondary fw-normal">Password</label>
                                     <div class="input-group">
-                                        <i class="p-md-3 fa fa-lock"></i><input type="text" name="password" class="form-control" id="signup-4-Password"
+                                        <i class="p-md-3 fa fa-lock"></i><input type="password" name="password" class="form-control" id="signup-4-Password"
                                             aria-describedby="infotext" required>
                                     </div>
                                 </div>
@@ -130,7 +130,7 @@
                                 <div class="mb-4">
                                     <label for="signup-4-Confirm Password" class="ms-5 form-label text-secondary fw-normal">Confirm Password</label>
                                     <div class="input-group">
-                                        <i class="p-md-3 fa fa-lock"></i><input type="text" name="confirm_password" class="form-control" id="signup-4-Confirm Password"
+                                        <i class="p-md-3 fa fa-lock"></i><input type="password" name="confirm_password" class="form-control" id="signup-4-Confirm Password"
                                             aria-describedby="infotext" required>
                                     </div>
                                 </div>

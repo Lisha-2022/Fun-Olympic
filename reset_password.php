@@ -249,7 +249,7 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center">
-                All Rights Reserved by Fun Olympic Games
+            Copyright © 2022 Beijing Organising Committee for the 2022 Fun Olympic Game
           </footer>
             <!-- ============================================================== -->
             <!-- End footer -->

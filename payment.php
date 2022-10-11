@@ -51,23 +51,22 @@
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav me-auto mb-2 mb-md-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <a class="nav-link active" aria-current="page" href="user_dashboard.php">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Categories</a>
+                                <a class="nav-link" href="category.php">Categories</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link">Sports</a>
+                                <a class="nav-link" href="games.php">Sports</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link">Watch</a>
+                                <a class="nav-link" href="top_vedios.php">Watch</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link">Live Streaming</a>
-                            </li>
-                            
+                                <a class="nav-link" href="payment.php">Live Streaming</a>
+                            </li> 
                             <li class="nav-item">
-                                <a class="nav-link">About</a>
+                                <a class="nav-link" href="user_dashboard.php">About</a>
                             </li>
                         </ul>
                         <form class="d-flex" role="search">

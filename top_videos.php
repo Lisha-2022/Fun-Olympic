@@ -1,5 +1,6 @@
 <?php include('Backend/user-session.php'); ?>
 <?php include('Backend/config.php'); ?>
+<?php $role = $_SESSION['role']; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,30 +44,30 @@
         <header>
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
                 <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="images/logo2.png" alt="..." width="100" height="50"></a>
+                <a class="navbar-brand" href="admin_dashboard.php"><img src="images/logo2.png" alt="..." width="100" height="50"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav me-auto mb-2 mb-md-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <a class="nav-link active" aria-current="page" href="<?php echo ($role == 'admin' ? 'admin_dashboard.php' : 'user_dashboard_php')?>">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Categories</a>
+                                <a class="nav-link" href="category.php">Categories</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link">Sports</a>
+                                <a class="nav-link" href="games.php">Sports</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link">Watch</a>
+                                <a class="nav-link" href="top_videos.php">Watch</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link">Live Streaming</a>
+                                <a class="nav-link" href="payment.php">Live Streaming</a>
                             </li>
                             
                             <li class="nav-item">
-                                <a class="nav-link">About</a>
+                                <a class="nav-link" href="user_dashboard.php" >About</a>
                             </li>
                         </ul>
                         <form class="d-flex" role="search">

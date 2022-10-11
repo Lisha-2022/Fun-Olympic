@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          }
         }
 
-    $sql = "UPDATE news SET title='$title', descrption='$description', thumbnail='$path_filename_ext' WHERE id=$id";
+    $sql = "UPDATE news SET title='$title', description='$description', thumbnail='$path_filename_ext' WHERE id=$id";
 
     if ($conn->query($sql) === TRUE) {
         $_SESSION['message'] = "News Updated Successfully";

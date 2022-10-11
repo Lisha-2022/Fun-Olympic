@@ -110,7 +110,7 @@
                     </div>
                 </div>
                 <footer class="footer text-center fixed-bottom">
-                All Rights Reserved by Fun Olympic Games
+                Copyright © 2022 Beijing Organising Committee for the 2022 Fun Olympic Game
                 </footer>
             </div>
         </main>

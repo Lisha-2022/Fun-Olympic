@@ -129,7 +129,7 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="Home.php" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
+                                href="admin_dashboard.php" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu">Home</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
@@ -269,7 +269,7 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center">
-                All Rights Reserved by Fun Olympic Games
+            Copyright © 2022 Beijing Organising Committee for the 2022 Fun Olympic Game
           </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
