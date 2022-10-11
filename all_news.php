@@ -96,12 +96,12 @@
                 <Br>
 
                 <?php 
-                    $sql = "SELECT g.id, g.title, g.thumbnail, g.description from wishlist as w inner join games g on w.game_id = g.id where w.user_id = $id";
+                    $sql = "SELECT * from news";
                     $result = $conn->query($sql); 
                     while($row = $result->fetch_assoc()) {
-                        echo '<a style="text-decoration:none; color: inherit" href="video-player.php?id='.$row['id'].'">
+                        echo '<a style="text-decoration:none; color: inherit" href="view_news.php?id='.$row['id'].'">
                         <div class="row"><div class="col-md-2">
-                        <img style="width:200px; height: 150px" src="games/thumbnails/'.$row['thumbnail'].'" alt="ok">
+                        <img style="width:200px; height: 150px" src="uploads/'.$row['thumbnail'].'" alt="ok">
                     </div>
                     <div class="col-md-10">
                         <h4>'.$row['title'].'</h4>

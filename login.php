@@ -56,7 +56,7 @@ session_start();
                                 <div class="mb-4">
                                     <label for="signup-4-Password" class="ms-5 form-label text-secondary fw-normal">Password</label>
                                     <div class="input-group">
-                                        <i class="p-md-3 fa fa-lock"></i><input type="password" name="password" class="form-control" id="signup-4-Password"
+                                        <i class="p-md-3 fa fa-lock"></i><input type="password" name="password" class="form-control" id="password"
                                             aria-describedby="infotext" required>
                                     </div>
                                 </div>
@@ -70,7 +70,7 @@ session_start();
 
                                          <div class="col-md-6">
                                             <div class="input-group text-end">
-                                                <input type="checkbox" class="form-check-input" id="signup-4-Checkbox">
+                                                <input type="checkbox" class="form-check-input" onclick="myFunction()">
                                                 <label class="form-check-label ms-3" for="signup-4-Checkbox">Show Password</label>
                                             </div>
                                         </div>
@@ -169,7 +169,15 @@ session_start();
     </div>
 
 <!-- end of block -->
-
+<script>
+    function myFunction() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+    }
+</script>
 </body>
-
 </html>

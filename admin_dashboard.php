@@ -181,19 +181,11 @@
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
             <div class="page-breadcrumb">
-            <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-12 text-center">
                         <h1 class="mb-0 fw-bold">Fun Olympic Game</h1>
                         <p class="mb-0 fw-bold">Dashboard</p>
 
-                    </div>
-                    </div>
-                    <!-- <div class="col-6">
-                        <div class="text-end upgrade-btn">
-                            <a href="https://www.wrappixel.com/templates/flexy-bootstrap-admin-template/" class="btn btn-primary text-white"
-                                target="_blank">Upgrade to Pro</a>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -206,55 +198,55 @@
             <div class="container-fluid">
                <div class="row">
                 <div class="col-md-4">
-                    <div class="card">
+                    <div class="card bg-primary">
                         <div class="card-body">
                             <div class="p-5 text-center">
-                            <h6><a href="users.php">USERS</a></h6>
+                            <h6><a href="users.php" class="text-white">USERS</a></h6>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card">
+                    <div class="card bg-warning">
                         <div class="card-body">
                             <div class="p-5 text-center">
-                            <h6><a href="category.php">CATEGORY</a></h6>
+                            <h6><a href="category.php" class="text-white">CATEGORY</a></h6>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card">
+                    <div class="card bg-light border border-dark">
                         <div class="card-body">
                             <div class="p-5 text-center">
-                            <h6><a href="news.php">NEWS</a></h6>
+                            <h6><a href="news.php" class="text-dark">NEWS</a></h6>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card">
+                    <div class="card bg-info">
                         <div class="card-body">
                             <div class="p-5 text-center">
-                            <h6><a href="games.php">GAMES</a></h6>
+                            <h6><a href="games.php" class="text-white">GAMES</a></h6>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card">
+                    <div class="card bg-danger">
                         <div class="card-body">
                             <div class="p-5 text-center">
-                            <h6><a href="top_videos.php">TOP VIDEOS</a></h6>
+                            <h6><a href="top_videos.php" class="text-white">TOP VIDEOS</a></h6>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card">
+                    <div class="card bg-success">
                         <div class="card-body">
                             <div class="p-5 text-center">
-                               <h6><a href="payment.php">CHECKOUT DETAILS </a></h6>
+                               <h6><a href="payment.php" class="text-white">CHECKOUT DETAILS </a></h6>
                             </div>
                         </div>
                     </div>
@@ -268,8 +260,8 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center fixed-bottom">
-            Copyright © 2022 Beijing Organising Committee for the 2022 Fun Olympic Game
-          </footer>
+                Copyright © 2022 Beijing Organising Committee for the 2022 Fun Olympic Game
+            </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->

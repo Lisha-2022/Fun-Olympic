@@ -6,6 +6,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $_POST['title'];
     $description= $_POST['description'];
 
+    if ($title == '' || $title == null) {
+        $_SESSION['message'] = "Title Cannot be Empty !!";
+        $_SESSION['msg_type'] = "danger";
+        header('Location: ../../news_add.php');
+        exit;
+    }
+
+    if ($description == '' || $description == null) {
+        $_SESSION['message'] = "Description Cannot be Empty !!";
+        $_SESSION['msg_type'] = "danger";
+        header('Location: ../../news_add.php');
+        exit;
+    }
+
     if (($_FILES['thumbnail']['name']!="")){
         
         // Where the file is going to be stored

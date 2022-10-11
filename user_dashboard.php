@@ -75,15 +75,14 @@
                             <input class="form-control me-2" type="search" placeholder="Search"  style="width:500px;" aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown" style="margin-top: -20px;">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="images/adminpic.png" alt="user" class="rounded-circle" width="31">
+                                <img src="images/adminpic.png" alt="user" class="rounded-circle" width="31">
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="Backend/logout.php"><i class="ti-user m-r-5 m-l-5"></i>Logout</a>
                             </ul>
                         </li>
-                      
                     </div>
                 </div>
             </nav>
@@ -126,11 +125,11 @@
                 </div>
             <div class="container-fluid">
                 <!-- Latest News -->
-                <div class="row p-3">
+                <div class="row p-2 mt-2">
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-6">
-                                <h2> Latest News </h2>
+                                <h4> Latest News </h4>
                             </div>
                             <div class="col-md-6 text-end">
                                 <a href="all_news.php" class="btn btn-primary">View All </a>
@@ -155,14 +154,14 @@
                         ?>
                 </div>
 
-                    <div class="row p-3">
+                <div class="row p-2 mt-4">
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-6">
-                                <h2>Video Hightlights </h2>
+                                <h4>Video Highlights</h4>
                             </div>
                             <div class="col-md-6 text-end">
-                                <a class="btn btn-primary">View All </a>
+                                <a href="all_games.php" class="btn btn-primary">View All </a>
                             <div>
                         </div>
                     </div> 
@@ -185,11 +184,11 @@
                         ?>
                 </div>
 
-                <div class="row p-3">
+                <div class="row p-2 mt-4">
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-6">
-                                <h2>Photo Gallery Hightlights </h2>
+                                <h4>Photo Gallery Highlights </h4>
                             </div>
                             <div class="col-md-6 text-end">
                                 <a class="btn btn-primary">View All </a>
@@ -215,11 +214,11 @@
                 </div>
 
                
-                <div class="row p-3">
-                    <div class="col-md-12">
+                <div class="row p-2 mt-4">
+                    <div class="col-md-12 mb-2">
                         <div class="row">
                             <div class="col-md-6">
-                                <h2>Medal Standing </h2>
+                                <h4>Medal Standing</h4>
                             </div>
                             <!-- <div class="col-md-6 text-end">
                                 <a class="btn btn-primary">View All </a>
@@ -257,11 +256,11 @@
                     </table>
                 </div>
 
-                <div class="row p-3">
-                    <div class="col-md-12">
+                <div class="row p-2 mt-4">
+                    <div class="col-md-12 mb-2">
                         <div class="row">
                             <div class="col-md-6">
-                                <h2>Game Schedule </h2>
+                                <h4>Game Schedule </h4>
                             </div>
                             <!-- <div class="col-md-6 text-end">
                                 <a class="btn btn-primary">View All </a>

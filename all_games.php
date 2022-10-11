@@ -96,7 +96,7 @@
                 <Br>
 
                 <?php 
-                    $sql = "SELECT g.id, g.title, g.thumbnail, g.description from wishlist as w inner join games g on w.game_id = g.id where w.user_id = $id";
+                    $sql = "SELECT * from games";
                     $result = $conn->query($sql); 
                     while($row = $result->fetch_assoc()) {
                         echo '<a style="text-decoration:none; color: inherit" href="video-player.php?id='.$row['id'].'">

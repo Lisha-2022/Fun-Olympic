@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -194,10 +195,21 @@
                         </div>
                         <div class="card-body">
                             <form action="Backend/Category/add.php" method="POST">
+                            <?php 
+                            if (isset($_SESSION['message']) && isset($_SESSION['msg_type'])){
+
+                                echo '<div class="alert alert-'.$_SESSION['msg_type'].'" role="alert">
+                                    '.$_SESSION['message'].'
+                                </div>';
+                                }
+                                unset($_SESSION['message']);
+                                unset($_SESSION['msg_type']);
+                            ?>
+                                
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Title</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="title" class="form-control" required />
+                                        <input type="text" name="title" class="form-control" />
                                     </div>
                                 </div>
                                 
