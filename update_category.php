@@ -3,7 +3,7 @@
 <?php
     if (isset($_GET['id']) && !empty($_GET['id'])){
         $id = $_GET['id'];
-        $sql = "SELECT title FROM category where id = $id";
+        $sql = "SELECT title FROM categories where id = $id";
         $result = $conn->query($sql);
 
         // Associative array
@@ -63,7 +63,7 @@
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
         <header class="topbar" data-navbarbg="skin6">
-            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light" sty>
                 <div class="navbar-header" data-logobg="skin6">
                     <!-- ============================================================== -->
                     <!-- Logo -->
@@ -215,11 +215,12 @@
                             </div>
                         </div>
                         <div class="card-body">
-                        <form action="Backend/Category/add.php" method="POST">
+                        <form action="Backend/Category/update.php" method="POST">
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Title</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required />
+                                        <input type="hidden" name="id" value="<?php echo $id;?>" />
+                                        <input type="text" value="<?php echo $row['title'] ?>" name="title" class="form-control" required />
                                     </div>
                                 </div>
                                 
@@ -232,16 +233,16 @@
                         </div>
                     </div>
                 </div>
+                 <!-- FOOTER -->
+                 <footer class="footer fixed-bottom text-center">
+                    Copyright © 2022 Beijing Organising Committee for the 2022 Fun Olympic Game
+                </footer>
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
             <!-- ============================================================== -->
             <!-- ============================================================== -->
-            <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer text-center">
-            Copyright © 2022 Beijing Organising Committee for the 2022 Fun Olympic Game
-          </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
@@ -249,7 +250,9 @@
         <!-- ============================================================== -->
         <!-- End Page wrapper  -->
         <!-- ============================================================== -->
+        
     </div>
+
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->

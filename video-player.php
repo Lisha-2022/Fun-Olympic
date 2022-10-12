@@ -25,6 +25,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Fun Olympics</title>
+    <style>
+        .avatar-circle {
+        width: 100px;
+        height: 100px;
+        background-color: '#ffff';
+        text-align: center;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        }
+
+        .initials {
+  position: relative;
+  top: 25px; /* 25% of parent */
+  font-size: 50px; /* 50% of parent */
+  line-height: 50px; /* 50% of parent */
+  color: #fff;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+}
+
+    </style>
 </head>
 <body>
     <!doctype html>
@@ -125,12 +147,50 @@
                         </div>
                         <div>
                             <h3>Comments</h3><hr>
+
+                            <?php
+                                    $sqll = "SELECT g.id, u.name, c.comment FROM comments as c inner join users u on c.user_id = u.id inner join games g on c.game_id = g.id where c.game_id = $id";
+                                    $result7 = $conn->query($sqll); 
+                                    if (!empty($result7) && $result7->num_rows > 0) {
+                                    // output data of each row
+                                    while($rowo = $result7->fetch_assoc()) { ?>
+                                    <div class="row mb-3">
+                                        <div class="col-md-1">
+                                            <img src="images/adminpic.png" alt="user" class="rounded-circle" width="50">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <h5><?php echo $rowo['name'] ?></h5>
+                                            <p><?php echo $rowo['comment'] ?></hp>
+                                        </div>
+                                    </div>
+                                    <?php }
+                                    } ?>
+                            <hr >
+                            <form method="post" action="Backend/Comment/add.php">
+                            <?php 
+                            if (isset($_SESSION['message']) && isset($_SESSION['msg_type'])){
+
+                                echo '<div class="alert alert-'.$_SESSION['msg_type'].'" role="alert">
+                                    '.$_SESSION['message'].'
+                                </div>';
+                                }
+                                unset($_SESSION['message']);
+                                unset($_SESSION['msg_type']);
+                            ?>
+                                <input name="game_id" value="<?php echo $id; ?>" type="hidden" />
+                                <input name="user_id" type="hidden" />
+                                <textarea name="comment" class="form-control"></textarea>
+                                <br>
+                                <div>
+                                 <button type="submit" class="btn btn-primary">Post</button>
+                                </div>
+                            </form>
+                           
                         </div>
                     </div>
                     <div class="col-md-3 my-3">
                       <?php  $sql = "SELECT * from games";
                             $result = $conn->query($sql); 
-                            $conn->close();
                             if (!empty($result) && $result->num_rows > 0) {
                                 while($row = $result->fetch_assoc()) {
                                     echo '<a style="text-decoration:none; color: inherit;" href="video-player.php?id='.$row['id'].'"><div class="row my-2">
@@ -144,6 +204,7 @@
                                 </div></a>';
                                 }
                             }
+                            $conn->close();
                         ?>
                     </div>
                 </div>

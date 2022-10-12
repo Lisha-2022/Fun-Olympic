@@ -3,6 +3,7 @@ session_start();
 include('../config.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $id = $_POST['id'];
     $title = $_POST['title'];
 
     $sql = "UPDATE categories SET title='$title' WHERE id=$id";

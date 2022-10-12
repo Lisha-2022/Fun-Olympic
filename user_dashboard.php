@@ -1,4 +1,3 @@
-<?php include('Backend/user-session.php'); ?>
 <?php include('Backend/config.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,6 +74,12 @@
                             <input class="form-control me-2" type="search" placeholder="Search"  style="width:500px;" aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
+                        
+                        <?php if (isset($_SESSION['role'])){ ?>
+                        <a class="btn btn-outline-primary ms-2" href="login.php">Login</a>
+                        <a class="btn btn-outline-primary ms-2" href="register.php">Register</a>
+                        <?php } else { ?>
+
                         <li class="nav-item dropdown" style="margin-top: -20px;">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <img src="images/adminpic.png" alt="user" class="rounded-circle" width="31">
@@ -83,6 +88,7 @@
                                 <a class="dropdown-item" href="Backend/logout.php"><i class="ti-user m-r-5 m-l-5"></i>Logout</a>
                             </ul>
                         </li>
+                        <?php } ?>
                     </div>
                 </div>
             </nav>
