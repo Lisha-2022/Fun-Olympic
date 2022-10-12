@@ -1,4 +1,4 @@
-<?php include('Backend/config.php'); ?>
+<?php session_start(); include('Backend/config.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
