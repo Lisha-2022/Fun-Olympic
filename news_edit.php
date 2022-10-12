@@ -221,21 +221,21 @@
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Title</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required value="<?php echo $row['title']; ?>"/>
+                                        <input type="text" name="title" class="form-control" required value="<?php echo $row['title']; ?>"/>
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-2 col-form-label">Description</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required value="<?php echo $row['description']; ?>" />
+                                        <input type="text" name="description" class="form-control" required value="<?php echo $row['description']; ?>" />
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
                                     <label for="staticEmail" class="col-sm-2 col-form-label">Thumbnail</label>
                                     <div class="col-sm-10">
-                                      <input type="file" class="form-control" required />
+                                      <input type="file" name="thumbnail" class="form-control" required />
                                     </div>
                                 </div>
                                  

@@ -230,7 +230,6 @@
                                             <th scope="col">Id</th>
                                             <th scope="col">Title</th>
                                             <th scope="col">Description</th>
-                                            <th scope="col">Created At</th>
                                             <th scope="col">Actions</th>
                                         </tr>
                                     </thead>
@@ -245,7 +244,6 @@
                                         <th scope="row">'.$row['id'].'</th>
                                         <td>'.$row['title'].'</td>
                                         <td>'.$row['description'].'</td>
-                                        <td>'.$row['created_at'].'</td>
                                         <td><a href="news_edit.php?id='.$row['id'].'" class="btn btn-info text-white">Edit</a></td>
                                     </tr>';
                                     }
