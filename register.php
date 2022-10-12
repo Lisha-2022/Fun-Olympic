@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Bootstrap layout</title>
+    <title>Register</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <link rel="stylesheet" type='text/css' href="css/index.css">
@@ -178,11 +178,10 @@
                                         <div class="h2">
                                             <i class="bi bi-quote text-center text-white"></i>
                                         </div>
-                                        <p class="testimonial">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                            Corrupti atque et dolore. Voluptate, fugit.</p>
+                                        <p class="testimonial">"The Olympics remain the most compelling search for excellence that exists in sport, and maybe in life itself."</p>
                                         <p class="overview text-end">
-                                            <b>RDJ</b><br />
-                                            <span class="text-secondary">Managing Director</span>
+                                            <b>Dawn Fraser</b><br />
+                                            <span class="text-secondary"></span>
                                         </p>
                                     </div>
                                 </div>
@@ -192,8 +191,7 @@
                                         <div class="h2">
                                             <i class="bi bi-quote text-center text-white"></i>
                                         </div>
-                                        <p class="testimonial">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                            Corrupti atque et dolore. Voluptate, fugit.</p>
+                                        <p class="testimonial">"The Olympics remain the most compelling search for excellence that exists in sport, and maybe in life itself."</p>
                                         <p class="overview text-end">
                                             <b>Chris Evans</b><br />
                                             <span class="text-secondary">Team Lead</span>
@@ -206,8 +204,7 @@
                                         <div class="h2">
                                             <i class="bi bi-quote text-center text-white"></i>
                                         </div>
-                                        <p class="testimonial">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                            Corrupti atque et dolore. Voluptate, fugit.</p>
+                                        <p class="testimonial"The Olympics remain the most compelling search for excellence that exists in sport, and maybe in life itself."</p>
                                         <p class="overview text-end">
                                             <b>JD</b><br />
                                             <span class="text-secondary">Founder</span>

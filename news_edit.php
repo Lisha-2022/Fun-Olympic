@@ -6,6 +6,7 @@
         $sql = "SELECT title, description, thumbnail FROM news where id = $id";
         $result = $conn->query($sql);
 
+        
         // Associative array
         $row = $result->fetch_assoc();
         $conn->close();
