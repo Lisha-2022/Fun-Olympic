@@ -75,7 +75,7 @@
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
                         
-                        <?php if (isset($_SESSION['role'])){ ?>
+                        <?php if (!isset($_SESSION['role'])){ ?>
                         <a class="btn btn-outline-primary ms-2" href="login.php">Login</a>
                         <a class="btn btn-outline-primary ms-2" href="register.php">Register</a>
                         <?php } else { ?>
